@@ -1,0 +1,27 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc:  <http://purl.org/dc/terms/> .
+
+#################################################################
+# Manifest Ontology: Entry point for Schweidler's Semantic PKMS
+# This ontology aggregates all relevant QA knowledge graph modules
+# via owl:imports, allowing single-point loading in GraphDB, Protégé, etc.
+# Base IRI: https://w3id.org/schweidler/semantics/qa-kg
+#################################################################
+
+<https://w3id.org/schweidler/semantics/qa-kg>
+    a owl:Ontology ;
+    dc:title "Schweidler Semantic PKMS — QA Knowledge Graph" ;
+    dc:creator "Schweidler" ;
+    dc:description "Manifest ontology importing all core modules used to represent QA knowledge, people, documents, events, and domain concepts." ;
+    owl:versionInfo "0.1" ;
+
+    #################################################################
+    # Imports for modular ontologies
+    #################################################################
+
+    owl:imports
+        <https://w3id.org/schweidler/semantics/qa-kg/rdf/glossary> ,       # SKOS terms and domain definitions
+        <https://w3id.org/schweidler/semantics/qa-kg/rdf/qa-taxonomy> ,    # OWL taxonomy for test levels/types
+        <https://w3id.org/schweidler/semantics/qa-kg/rdf/scrum-events> ,   # Events, roles, artifacts in Scrum
+        <https://w3id.org/schweidler/semantics/qa-kg/rdf/org-people> ,     # People, roles, and org structure
+        <https://w3id.org/schweidler/semantics/qa-kg/rdf/artifacts> .      # Knowledge artifacts (plans, reports, etc.)
