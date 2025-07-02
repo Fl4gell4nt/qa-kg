@@ -16,12 +16,12 @@ To capture, interlink, and query domain-specific knowledge using a modular, exte
 
 | File                              | Description |
 |-----------------------------------|-------------|
-| `ontology/qa-upper.ttl`          | Upper ontology for high-level concepts |
-| `ontology/glossary.ttl`          | SKOS glossary of QA-related terms |
-| `ontology/qa-taxonomy.ttl`       | Subsumption hierarchy for QA types, activities |
-| `ontology/scrum.ttl`             | Scrum-based software development modeling |
-| `ontology/org-people.ttl`        | People, roles, teams, and org units |
-| `ontology/artifacts.ttl`         | Knowledge artifact ontology (notes, test plans, checklists, ...) |
+| `rdf/upper.ttl`             | Upper ontology for high-level concepts |
+| `rdf/glossary.ttl`          | SKOS glossary of QA-related terms |
+| `rdf/qa-taxonomy.ttl`       | Subsumption hierarchy for QA types, activities |
+| `rdf/scrum.ttl`             | Scrum-based software development modeling |
+| `rdf/org-people.ttl`        | People, roles, teams, and org units |
+| `rdf/artifacts.ttl`         | Knowledge artifact ontology (notes, test plans, checklists, ...) |
 
 ## 🏷️ Base IRI
 
