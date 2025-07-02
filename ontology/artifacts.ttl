@@ -1,0 +1,3 @@
+@prefix : <https://w3id.org/schweidler/semantics/qa-kg#> .
+
+# artifacts.ttl
