@@ -1,0 +1,109 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:  <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <https://w3id.org/schweidler/semantics/qa-kg#> .
+
+<https://w3id.org/schweidler/semantics/qa-kg/upper>
+    a owl:Ontology ;
+    dc:title "Schweidler Semantic PKMS Upper Ontology" ;
+    dc:creator "Schweidler" ;
+    dc:description "Upper ontology defining foundational classes and properties for software QA, knowledge artifacts, events, people, and roles." ;
+    owl:versionInfo "0.1" .
+
+#################################################################
+# Core Classes
+#################################################################
+
+:Agent
+    a owl:Class ;
+    rdfs:label "Agent"@en ;
+    rdfs:comment "An entity capable of intentional action (person, organization, software agent)."@en .
+
+:Person
+    a owl:Class ;
+    rdfs:subClassOf :Agent ;
+    rdfs:label "Person"@en ;
+    rdfs:comment "A human being."@en .
+
+:Organization
+    a owl:Class ;
+    rdfs:subClassOf :Agent ;
+    rdfs:label "Organization"@en ;
+    rdfs:comment "An organized group of people, such as a company or department."@en .
+
+:Role
+    a owl:Class ;
+    rdfs:label "Role"@en ;
+    rdfs:comment "A function or responsibility assigned to an agent."@en .
+
+:Activity
+    a owl:Class ;
+    rdfs:label "Activity"@en ;
+    rdfs:comment "A process or action performed by agents."@en .
+
+:Event
+    a owl:Class ;
+    rdfs:subClassOf :Activity ;
+    rdfs:label "Event"@en ;
+    rdfs:comment "An occurrence or happening at a point or interval in time."@en .
+
+:Artifact
+    a owl:Class ;
+    rdfs:label "Artifact"@en ;
+    rdfs:comment "A physical or digital object created, used, or modified during activities."@en .
+
+#################################################################
+# Core Properties
+#################################################################
+
+:hasRole
+    a owl:ObjectProperty ;
+    rdfs:label "has role"@en ;
+    rdfs:domain :Agent ;
+    rdfs:range :Role ;
+    rdfs:comment "Associates an agent with a role they fulfill."@en .
+
+:participatesIn
+    a owl:ObjectProperty ;
+    rdfs:label "participates in"@en ;
+    rdfs:domain :Agent ;
+    rdfs:range :Activity ;
+    rdfs:comment "Indicates participation of an agent in an activity."@en .
+
+:produces
+    a owl:ObjectProperty ;
+    rdfs:label "produces"@en ;
+    rdfs:domain :Activity ;
+    rdfs:range :Artifact ;
+    rdfs:comment "Indicates that an activity results in the creation or modification of an artifact."@en .
+
+:hasParticipant
+    a owl:ObjectProperty ;
+    rdfs:label "has participant"@en ;
+    rdfs:domain :Activity ;
+    rdfs:range :Agent ;
+    rdfs:comment "Indicates agents involved in an activity."@en .
+
+:relatedTo
+    a owl:ObjectProperty ;
+    rdfs:label "related to"@en ;
+    rdfs:comment "General-purpose relation to link concepts or entities."@en .
+
+#################################################################
+# Data Properties
+#################################################################
+
+:startTime
+    a owl:DatatypeProperty ;
+    rdfs:label "start time"@en ;
+    rdfs:domain :Event ;
+    rdfs:range xsd:dateTime ;
+    rdfs:comment "Timestamp indicating when an event starts."@en .
+
+:endTime
+    a owl:DatatypeProperty ;
+    rdfs:label "end time"@en ;
+    rdfs:domain :Event ;
+    rdfs:range xsd:dateTime ;
+    rdfs:comment "Timestamp indicating when an event ends."@en .

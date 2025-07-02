@@ -1,3 +1,19 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:  <http://purl.org/dc/terms/> .
 @prefix : <https://w3id.org/schweidler/semantics/qa-kg#> .
 
-# qa-taxonomy.ttl
+<https://w3id.org/schweidler/semantics/qa-kg/qa-taxonomy>
+    a owl:Ontology ;
+    dc:title "Software QA Domain Taxonomy" ;
+    dc:creator "Schweidler" ;
+    dc:description "OWL class hierarchy defining test levels, types, and QA techniques in software quality assurance." ;
+    owl:versionInfo "0.1" .
+
+#################################################################
+# Classes Go Below
+#################################################################
+
+#:TestActivity a owl:Class ;
+#    rdfs:label "Test Activity"@en ;
+#    rdfs:comment "Abstract superclass of testing-related activities."@en .

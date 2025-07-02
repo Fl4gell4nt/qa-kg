@@ -1,3 +1,19 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc:  <http://purl.org/dc/terms/> .
 @prefix : <https://w3id.org/schweidler/semantics/qa-kg#> .
 
-# artifacts.ttl
+<https://w3id.org/schweidler/semantics/qa-kg/artifacts>
+    a owl:Ontology ;
+    dc:title "Knowledge Artifact Ontology" ;
+    dc:creator "Schweidler" ;
+    dc:description "Ontology using Dublin Core terms to describe documents, templates, checklists, reports, specs, and other work-related knowledge objects." ;
+    owl:versionInfo "0.1" ;
+    owl:imports <http://purl.org/dc/terms/> .
+
+#################################################################
+# Artifact Types Go Below
+#################################################################
+
+#:TestPlan a owl:Class ;
+#    rdfs:label "Test Plan"@en ;
+#    dc:description "A document that outlines the scope, approach, resources, and schedule of intended testing activities."@en .

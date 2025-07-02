@@ -1,3 +1,23 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc:  <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
 @prefix : <https://w3id.org/schweidler/semantics/qa-kg#> .
 
-# org-people.ttl
+<https://w3id.org/schweidler/semantics/qa-kg/org-people>
+    a owl:Ontology ;
+    dc:title "People & Organizational Structure Ontology" ;
+    dc:creator "Schweidler" ;
+    dc:description "Ontology describing people, roles, departments, reporting lines and responsibilities." ;
+    owl:versionInfo "0.1" ;
+    owl:imports
+        <http://xmlns.com/foaf/0.1/> ,
+        <http://www.w3.org/ns/org#> .
+
+#################################################################
+# People, Roles, Orgs Go Below
+#################################################################
+
+#:QAEngineer a foaf:Person ;
+#    foaf:name "QA Engineer"@en ;
+#    org:holds <#QAEngineerRole> .
