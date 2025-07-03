@@ -1,0 +1,64 @@
+@prefix : <https://w3id.org/schweidler/semantics/qa-kg#> .
+@prefix upper: <https://w3id.org/schweidler/semantics/qa-kg/upper#> .
+@prefix org: <https://w3id.org/schweidler/semantics/qa-kg/org#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix person: <https://w3id.org/schweidler/semantics/qa-kg/person#> .
+@prefix artifact: <https://w3id.org/schweidler/semantics/qa-kg/artifact#> .
+@prefix activity: <https://w3id.org/schweidler/semantics/qa-kg/activity#> .
+@prefix role: <https://w3id.org/schweidler/semantics/qa-kg/role#> .
+
+#################################################################
+# Person and Role
+#################################################################
+
+person:Schweidler
+    a upper:Person ;
+    rdfs:label "Schweidler"@en ;
+    upper:hasRole role:SoftwareTester ;
+    org:memberOf org:QATeam ;
+    dct:identifier "emp-0001" ;
+    dct:description "Quality assurance engineer in the R&D department."@en .
+
+role:SoftwareTester
+    a upper:Role ;
+    rdfs:label "Software Tester"@en ;
+    dct:description "Responsible for creating, executing, and evaluating test cases."@en .
+
+#################################################################
+# Organization
+#################################################################
+
+org:QATeam
+    a upper:Organization ;
+    rdfs:label "QA Team"@en ;
+    dct:description "Software Quality Assurance Department."@en .
+
+#################################################################
+# Activity
+#################################################################
+
+activity:TestCaseReview20250701
+    a upper:Event ;
+    rdfs:label "Test Case Review Meeting"@en ;
+    dct:description "Review of functional test cases with developers and testers."@en ;
+    upper:startTime "2025-07-01T10:00:00+02:00"^^xsd:dateTime ;
+    upper:endTime "2025-07-01T11:00:00+02:00"^^xsd:dateTime ;
+    upper:hasParticipant person:Schweidler ;
+    upper:produces artifact:TestPlan_v1 .
+
+#################################################################
+# Knowledge Artifact
+#################################################################
+
+artifact:TestPlan_v1
+    a upper:Artifact ;
+    rdfs:label "Test Plan V1"@en ;
+    dct:description "Initial version of the test plan for Sprint 42."@en ;
+    dct:created "2025-06-30"^^xsd:date ;
+    dct:creator person:Schweidler ;
+    dct:format "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ;
+    dct:identifier "doc-001" ;
+    dct:subject "Sprint 42 Testing" .

@@ -2,6 +2,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dc:  <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix org: <http://www.w3.org/ns/org#> .
 @prefix : <https://w3id.org/schweidler/semantics/qa-kg#> .
 
 <https://w3id.org/schweidler/semantics/qa-kg/upper>
@@ -24,12 +25,14 @@
 :Person
     a owl:Class ;
     rdfs:subClassOf :Agent ;
+    rdfs:subClassOf foaf:Person ;
     rdfs:label "Person"@en ;
     rdfs:comment "A human being."@en .
 
 :Organization
     a owl:Class ;
     rdfs:subClassOf :Agent ;
+    rdfs:subClassOf org:Organization ;
     rdfs:label "Organization"@en ;
     rdfs:comment "An organized group of people, such as a company or department."@en .
 

@@ -7,6 +7,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix upper: <https://w3id.org/schweidler/semantics/qa-kg/upper#> .
 @prefix : <https://w3id.org/schweidler/semantics/qa-kg#> .
 
 <https://w3id.org/schweidler/semantics/qa-kg/org-people>
@@ -33,16 +34,18 @@
 #################################################################
 
 :Person a owl:Class ;
-    rdfs:subClassOf foaf:Person ;
+    rdfs:subClassOf upper:Person ;
     rdfs:label "Person" ;
-    rdfs:comment "A person in a personal or professional context." .
+    rdfs:comment "A person in a personal or professional context." ;
+    :firstName rdfs:Literal ;
+    :lastName rdfs:Literal .
 
 :Interaction a owl:Class ;
     rdfs:label "Interaction" ;
     rdfs:comment "An interaction or communication between one or more people." .
 
 :Organization a owl:Class ;
-    rdfs:subClassOf org:Organization ;
+    rdfs:subClassOf upper:Organization ;
     rdfs:label "Organization" .
 
 :Affiliation a owl:Class ;
@@ -58,6 +61,7 @@
     rdfs:comment "Medium of communication (e.g. email, phone, Slack)." .
 
 :Event a owl:Class ;
+    rdfs:subClassOf upper:Event ;
     rdfs:label "Event" ;
     rdfs:comment "A time-bounded occurrence involving one or more people." .
 
@@ -66,6 +70,7 @@
     rdfs:comment "A note taken about a person or interaction." .
 
 :Document a owl:Class ;
+    rdfs:subClassOf upper:Artifact ;
     rdfs:label "Document" ;
     rdfs:comment "A shared document or file associated with an interaction." .
 
@@ -120,6 +125,18 @@
 #################################################################
 # Datatype Properties
 #################################################################
+
+:firstName a owl:DatatypeProperty ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:string .
+
+:middleName a owl:DatatypeProperty ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:string .
+
+:lastName a owl:DatatypeProperty ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:string .
 
 :interactionDate a owl:DatatypeProperty ;
     rdfs:domain :Interaction ;

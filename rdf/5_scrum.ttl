@@ -5,7 +5,10 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix upper: <https://w3id.org/schweidler/semantics/qa-kg/1_upper#> .
+@prefix mer: <https://w3id.org/schweidler/semantics/qa-kg/3_meronymy#> .
 @prefix : <https://w3id.org/schweidler/semantics/qa-kg#> .
+
 
 <https://w3id.org/schweidler/semantics/qa-kg/scrum>
     a owl:Ontology ;
@@ -19,12 +22,15 @@
         <http://www.w3.org/2006/time#> .
 
 ### Core Classes ###
-:ScrumProcess a rdfs:Class .
-:Sprint a rdfs:Class ;
-    rdfs:subClassOf :ScrumProcess .
-:ScrumEvent a rdfs:Class .
-:ScrumRole a rdfs:Class .
-:WorkProduct a rdfs:Class .
+:ScrumProcess   a rdfs:Class ;
+    rdfs:subClassOf  upper:Activity .
+:Sprint a rdfs:Class .
+:ScrumEvent a rdfs:Class ;
+    rdfs:subClassOf upper:Event .
+:ScrumRole a rdfs:Class ;
+    rdfs:subClassOf upper:Role .
+:WorkProduct a rdfs:Class ;
+    rdfs:subClassOf upper:Artifact .
 
 ### Role Types ###
 :ProductOwner a rdfs:Class ;
@@ -33,6 +39,8 @@
     rdfs:subClassOf :ScrumRole .
 :Developer a rdfs:Class ;
     rdfs:subClassOf :ScrumRole .
+:Tester a rdfs:Class ;
+    rdfs:subClassOf :ScrumRole .    
 
 ### Event Types ###
 :DailyScrum a rdfs:Class ;
@@ -54,10 +62,13 @@
 
 ### Properties ###
 :hasEvent a rdf:Property ;
+    rdfs:subPropertyOf mer:hasPhase ;   # on meronymic level an event is a phase
+    rdfs:subClassOf :ScrumRole .
     rdfs:domain :Sprint ;
     rdfs:range :ScrumEvent .
 
 :hasRole a rdf:Property ;
+    rdfs:subPropertyOf mer:hasComponent ;   # on meronymic level a role is a structural component of the whole sprint
     rdfs:domain :Sprint ;
     rdfs:range :ScrumRole .
 
