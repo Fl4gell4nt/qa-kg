@@ -8,7 +8,7 @@
     dc:title "Meronymy Ontology for Schweidler Semantic PKMS" ;
     dc:creator "Rene Schweidler MSc." ;
     dc:description "Provides typed part-whole relations aligned with DUL for modeling component, member, substance, portion, place, and phase relationships." ;
-    owl:versionInfo "0.1" .
+    owl:versionInfo "0.1" ;
     rdfs:label "Meronymy Ontology Module (DUL-based) for RSPKMS" ;
     owl:imports <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> .
 
