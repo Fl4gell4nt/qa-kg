@@ -7,8 +7,9 @@
 <https://w3id.org/schweidler/semantics/qa-kg/upper>
     a owl:Ontology ;
     dc:title "Schweidler Semantic PKMS Upper Ontology" ;
-    dc:creator "Schweidler" ;
+    dc:creator "Rene Schweidler MSc." ;
     dc:description "Upper ontology defining foundational classes and properties for software QA, knowledge artifacts, events, people, and roles." ;
+    rdfs:label "Upper Ontology Module for RSPKMS" ;
     owl:versionInfo "0.1" .
 
 #################################################################

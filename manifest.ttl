@@ -20,9 +20,10 @@
     #################################################################
 
     owl:imports
-        <https://w3id.org/schweidler/semantics/qa-kg/rdf/upper> ,          # Upper ontology for high-level concepts
-        <https://w3id.org/schweidler/semantics/qa-kg/rdf/glossary> ,       # SKOS terms and domain definitions
-        <https://w3id.org/schweidler/semantics/qa-kg/rdf/qa-taxonomy> ,    # OWL taxonomy for test levels/types
-        <https://w3id.org/schweidler/semantics/qa-kg/rdf/scrum> ,          # Events, roles, artifacts in Scrum
-        <https://w3id.org/schweidler/semantics/qa-kg/rdf/org-people> ,     # People, roles, and org structure
-        <https://w3id.org/schweidler/semantics/qa-kg/rdf/artifacts> .      # Knowledge artifacts (plans, reports, etc.)
+        <https://w3id.org/schweidler/semantics/qa-kg/rdf/1_upper> ,          # Upper ontology for high-level concepts
+        <https://w3id.org/schweidler/semantics/qa-kg/rdf/2_glossary> ,       # SKOS terms and domain definitions
+        <https://w3id.org/schweidler/semantics/qa-kg/rdf/3_meronymy> ,       # Meronymy ontology for detailed part/whole relations
+        <https://w3id.org/schweidler/semantics/qa-kg/rdf/4_qa-taxonomy> ,    # OWL taxonomy for test levels/types
+        <https://w3id.org/schweidler/semantics/qa-kg/rdf/5_scrum> ,          # Events, roles, artifacts in Scrum
+        <https://w3id.org/schweidler/semantics/qa-kg/rdf/6_org-people> ,     # People, roles, and org structure
+        <https://w3id.org/schweidler/semantics/qa-kg/rdf/7_artifacts> .      # Knowledge artifacts (plans, reports, etc.)

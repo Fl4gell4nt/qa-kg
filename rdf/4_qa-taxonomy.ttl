@@ -6,14 +6,13 @@
 <https://w3id.org/schweidler/semantics/qa-kg/qa-taxonomy>
     a owl:Ontology ;
     dc:title "Software QA Domain Taxonomy" ;
-    dc:creator "Schweidler" ;
+    dc:creator "Rene Schweidler MSc." ;
     dc:description "OWL class hierarchy defining test levels, types, and QA techniques in software quality assurance." ;
+    rdfs:label "Quality Assurance Domain Taxonomy Module for RSPKMS" ;
     owl:versionInfo "0.1" .
 
 #################################################################
 # Classes Go Below
 #################################################################
 
-#:TestActivity a owl:Class ;
-#    rdfs:label "Test Activity"@en ;
-#    rdfs:comment "Abstract superclass of testing-related activities."@en .
+

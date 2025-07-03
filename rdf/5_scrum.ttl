@@ -1,0 +1,87 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc:  <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <https://w3id.org/schweidler/semantics/qa-kg#> .
+
+<https://w3id.org/schweidler/semantics/qa-kg/scrum>
+    a owl:Ontology ;
+    dc:title "Scrum Event & Work Product Ontology" ;
+    dc:creator "Rene Schweidler MSc." ;
+    dc:description "Ontology modeling Scrum events, roles, artifacts, and time-based sequences from a QA perspective." ;
+    rdfs:label "Scrum & Event Ontology Module for RSPKMS" ;
+    owl:versionInfo "0.1" ;
+    owl:imports
+        <http://www.w3.org/ns/prov#> ,
+        <http://www.w3.org/2006/time#> .
+
+### Core Classes ###
+:ScrumProcess a rdfs:Class .
+:Sprint a rdfs:Class ;
+    rdfs:subClassOf :ScrumProcess .
+:ScrumEvent a rdfs:Class .
+:ScrumRole a rdfs:Class .
+:WorkProduct a rdfs:Class .
+
+### Role Types ###
+:ProductOwner a rdfs:Class ;
+    rdfs:subClassOf :ScrumRole .
+:ScrumMaster a rdfs:Class ;
+    rdfs:subClassOf :ScrumRole .
+:Developer a rdfs:Class ;
+    rdfs:subClassOf :ScrumRole .
+
+### Event Types ###
+:DailyScrum a rdfs:Class ;
+    rdfs:subClassOf :ScrumEvent .
+:PlanningMeeting a rdfs:Class ;
+    rdfs:subClassOf :ScrumEvent .
+:ReviewMeeting a rdfs:Class ;
+    rdfs:subClassOf :ScrumEvent .
+:Retrospective a rdfs:Class ;
+    rdfs:subClassOf :ScrumEvent .
+
+### Work Products ###
+:ProductBacklog a rdfs:Class ;
+    rdfs:subClassOf :WorkProduct .
+:SprintBacklog a rdfs:Class ;
+    rdfs:subClassOf :WorkProduct .
+:Increment a rdfs:Class ;
+    rdfs:subClassOf :WorkProduct .
+
+### Properties ###
+:hasEvent a rdf:Property ;
+    rdfs:domain :Sprint ;
+    rdfs:range :ScrumEvent .
+
+:hasRole a rdf:Property ;
+    rdfs:domain :Sprint ;
+    rdfs:range :ScrumRole .
+
+:isFacilitatedBy a rdf:Property ;
+    rdfs:domain :ScrumEvent ;
+    rdfs:range :ScrumRole .
+
+:produces a rdf:Property ;
+    rdfs:domain :ScrumProcess ;
+    rdfs:range :WorkProduct .
+
+:hasDuration a rdf:Property ;
+    rdfs:domain :Sprint ;
+    rdfs:range xsd:duration .
+
+:hasStartDate a rdf:Property ;
+    rdfs:domain :Sprint ;
+    rdfs:range xsd:date .
+
+:hasEndDate a rdf:Property ;
+    rdfs:domain :Sprint ;
+    rdfs:range xsd:date .
+
+:isResponsibleFor a rdf:Property ;
+    rdfs:domain :ScrumRole ;
+    rdfs:range :WorkProduct .
+
