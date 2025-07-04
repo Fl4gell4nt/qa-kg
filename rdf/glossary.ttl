@@ -1,6 +1,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dc:  <http://purl.org/dc/terms/> .
+@prefix qa: <https://w3id.org/schweidler/semantics/qa#> .
 @prefix : <https://w3id.org/schweidler/semantics/qa-kg#> .
 
 <https://w3id.org/schweidler/semantics/qa-kg/glossary>
@@ -13,14 +14,15 @@
     owl:imports <http://www.w3.org/2004/02/skos/core> .
 
 #################################################################
-# SKOS Concepts Go Below
+# Core Concepts
 #################################################################
-
 :SoftwareTest a skos:Concept ;
     skos:prefLabel "Software Test"@en ;
     skos:definition "A procedure carried out to evaluate a software system or component." .
 
+#################################################################
 # Categories of Tests
+#################################################################
 :FunctionalTest a skos:Concept ;
     skos:prefLabel "Functional Test"@en ;
     skos:broader :SoftwareTest ;
@@ -31,7 +33,9 @@
     skos:broader :SoftwareTest ;
     skos:definition "Tests that verify non-functional aspects such as performance, usability, and reliability." .
 
+#################################################################
 # Functional Test Types
+#################################################################
 :UnitTest a skos:Concept ;
     skos:prefLabel "Unit Test"@en ;
     skos:broader :FunctionalTest ;
@@ -72,7 +76,9 @@
     skos:broader :FunctionalTest ;
     skos:definition "Tests that simulate real user scenarios from start to finish to validate system flow." .
 
+#################################################################
 # Non-Functional Test Types
+#################################################################
 :PerformanceTest a skos:Concept ;
     skos:prefLabel "Performance Test"@en ;
     skos:broader :NonFunctionalTest ;
@@ -128,7 +134,9 @@
     skos:broader :NonFunctionalTest ;
     skos:definition "Tests the system’s ability to recover from crashes, hardware failures, or other major problems." .
 
+#################################################################
 # Exploratory and Other Test Types
+#################################################################
 :ExploratoryTest a skos:Concept ;
     skos:prefLabel "Exploratory Test"@en ;
     skos:broader :SoftwareTest ;
@@ -148,3 +156,18 @@
     skos:prefLabel "Beta Test"@en ;
     skos:broader :AcceptanceTest ;
     skos:definition "External user testing to validate the software in a real environment before full release." .
+
+#################################################################
+# Scrum Core Concepts
+#################################################################
+:RequirementConcept a skos:Concept ;
+    skos:prefLabel "Requirement"@en ;
+    skos:definition "A documented statement of a condition, capability, or constraint that a system must satisfy to meet a stakeholder’s need or objective."@en ;
+    skos:scopeNote "Use this concept to represent all forms of stakeholder expectations that are expressed as mandatory system behaviors, capabilities, or constraints. This includes both functional and non-functional requirements."@en ;
+    skos:exactMatch qa:Requirement .
+
+:ConstraintConcept a skos:Concept ;
+    skos:prefLabel "Constraint"@en ;
+    skos:definition "A requirement that specifies a limitation or condition that restricts design options, such as compliance, interface, technology, budget, or timing."@en ;
+    skos:scopeNote "Use this concept to classify requirements that limit how a system must be built or operated. Examples include regulatory requirements, technology constraints, interoperability obligations, or resource limitations."@en ;
+    skos:exactMatch qa:Constraint .

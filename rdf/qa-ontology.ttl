@@ -1,0 +1,90 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc:  <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix upper: <https://w3id.org/schweidler/semantics/qa-kg/upper#> .
+@prefix mer: <https://w3id.org/schweidler/semantics/qa-kg/meronymy#> .
+@prefix gloss: <https://w3id.org/schweidler/semantics/qa-kg/glossary#> .
+@prefix : <https://w3id.org/schweidler/semantics/qa-kg#> .
+
+
+<https://w3id.org/schweidler/semantics/qa-kg/qa>
+    a owl:Ontology ;
+    dc:title "Software Quality Assurance Domain Ontology" ;
+    dc:creator "Rene Schweidler MSc." ;
+    dc:description "Ontology modeling entities that belong to the domain of software quality assurance and testing however are independent from scrum."@en ;
+    rdfs:label "Software Quality Assurance Domain Ontology" ;
+    owl:versionInfo "0.1" ;
+    owl:imports
+        <http://www.w3.org/ns/prov#> ,
+        <http://www.w3.org/2006/time#> ,
+        <http://www.w3.org/2002/07/owl#> ,
+        <http://purl.org/dc/terms/> ,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ,
+        <http://www.w3.org/2000/01/rdf-schema#> ,
+        <http://www.w3.org/2001/XMLSchema#> ,
+        <https://w3id.org/schweidler/semantics/qa-kg/upper#> ,
+        <https://w3id.org/schweidler/semantics/qa-kg/meronymy#> ,
+        <https://w3id.org/schweidler/semantics/qa-kg/glossary#> ,
+        <https://w3id.org/schweidler/semantics/qa-kg#> .
+
+#################################################################
+# Core Classes
+#################################################################
+# :ScrumProcess a owl:Class ;
+#     rdfs:label "Scrum Process"@en ;
+#     rdfs:comment "A structured, iterative process based on Scrum principles, encompassing sprints, roles, and events to guide software development."@en ;
+#     skos:scopeNote "Use this class to represent the overall execution of Scrum, often tied to a project or product delivery lifecycle."@en ;
+#     skos:exactMatch gloss:ScrumProcessConcept ;
+#     rdfs:isDefinedBy gloss:ScrumProcessConcept ;
+#     rdfs:subClassOf upper:Activity .
+:SoftwareFunction a owl:Class ;
+    rdfs:label "Software Function"@en ;
+    rdfs:comment "A distinct capability or behavior implemented by software to fulfill one or more requirements."@en ;
+    skos:scopeNote "Use this concept to represent an individual, identifiable piece of software behavior or functionality, typically aligned with a requirement or user need. It is not intended to represent entire systems, subsystems, or non-functional aspects like performance or scalability."@en ;
+    skos:exactMatch gloss:SoftwareFunctionConcept ;
+    rdfs:isDefinedBy gloss:SoftwareFunctionConcept ;
+    rdfs:subClassOf upper:Artifact .
+
+:Requirement a owl:Class ;
+    rdfs:label "Requirement"@en ;
+    rdfs:comment "A documented condition or capability needed by a stakeholder or system to solve a problem or achieve an objective, which must be fulfilled by a software or system component."@en ;
+    skos:scopeNote "Use this concept to describe stakeholder expectations or system obligations that must be satisfied. It includes both functional and non-functional requirements, but should not be confused with implementation details or technical tasks."@en .
+    skos:exactMatch gloss:RequirementConcept ;
+    rdfs:isDefinedBy gloss:RequirementConcept ;
+    rdfs:subClassOf prov:Entity .
+
+:Constraint a owl:Class ;
+    rdfs:label "Constraint"@en ;
+    rdfs:comment "A type of requirement that imposes a restriction on the design, implementation, or operation of a system."@en ;
+    skos:scopeNote "Use this concept to classify requirements that limit how a system must be built or operated. Examples include regulatory requirements, technology constraints, interoperability obligations, or resource limitations."@en ;
+    skos:exactMatch gloss:ConstraintConcept ;
+    rdfs:isDefinedBy gloss:ConstraintConcept ;
+    rdfs:subClassOf :Requirement .
+
+#################################################################
+# ObjectProperties
+#################################################################
+# :hasEvent a owl:ObjectProperty ;
+#     rdfs:label "has Event"@en ;
+#     rdfs:comment "Associates a Sprint with one or more Scrum Events."@en ;
+#     rdfs:subPropertyOf mer:hasPhase ;   # on meronymic level an event is a phase
+#     rdfs:domain :Sprint ;
+#     rdfs:range :ScrumEvent .
+
+#################################################################
+# DatatypeProperties
+#################################################################
+# :hasDuration a owl:DatatypeProperty ;
+#     rdfs:label "has Duration"@en ;
+#     rdfs:comment "Duration of the Sprint in days."@en ;
+#     rdfs:domain :Sprint ;
+#     rdfs:range xsd:duration .
+
+#################################################################
+# Inverse ObjectProperties
+#################################################################
+#:facilitates owl:inverseOf :isFacilitatedBy .
