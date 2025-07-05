@@ -13,6 +13,7 @@
 @prefix qa: <https://w3id.org/schweidler/semantics/qa-kg#> .
 @prefix qavoc: <https://w3id.org/schweidler/semantics/qa-kg/qa-vocabulary#> .
 @prefix coglo: <https://w3id.org/schweidler/semantics/qa-kg/core-glossary#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 
 
 #################################################################
@@ -32,7 +33,7 @@
     vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/core-glossary#" ;
     owl:versionIRI <https://w3id.org/schweidler/semantics/qa-kg/core-glossary/0.1.0/> ;
     owl:versionInfo "0.1.0" ;
-    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, gloss:, mer:, upper:, qa: .
+    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, gloss:, mer:, upper:, qa:, vann: .
 
 #################################################################
 # Concept Scheme

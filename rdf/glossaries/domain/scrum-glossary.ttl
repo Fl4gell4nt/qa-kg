@@ -13,6 +13,7 @@
 @prefix qa: <https://w3id.org/schweidler/semantics/qa-kg#> .
 @prefix scvoc: <https://w3id.org/schweidler/semantics/qa-kg/scrum-vocabulary#> .
 @prefix scglo: <https://w3id.org/schweidler/semantics/qa-kg/glossaries/domain/scrum-glossary#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 
 #################################################################
 # Documentation
@@ -32,7 +33,7 @@
     vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/scrum-glossary#" ;
     owl:versionIRI <https://w3id.org/schweidler/semantics/qa-kg/glossaries/domain/scrum-glossary/1.0.0#> ;
     owl:versionInfo "0.1.0" ;
-    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, gloss:, mer:, upper:, qa: .
+    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, gloss:, mer:, upper:, qa:, vann: .
 
 #################################################################
 # Concept Scheme

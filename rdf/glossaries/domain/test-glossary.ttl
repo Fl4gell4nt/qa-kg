@@ -12,6 +12,7 @@
 @prefix upper: <https://w3id.org/schweidler/semantics/qa-kg/upper#> .
 @prefix qa: <https://w3id.org/schweidler/semantics/qa-kg#> .
 @prefix tglo: <https://w3id.org/schweidler/semantics/qa-kg/test-glossary#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 
 #################################################################
 # Documentation
@@ -31,7 +32,7 @@
     vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/test-glossary#" ;
     owl:versionIRI <https://w3id.org/schweidler/semantics/qa-kg/test-glossary/0.1.0/> ;
     owl:versionInfo "v2025-07-02" ;
-    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, gloss:, mer:, upper:, qa: .
+    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, gloss:, mer:, upper:, qa:, vann: .
 
 #################################################################
 # Concept Scheme

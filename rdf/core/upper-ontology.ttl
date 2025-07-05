@@ -11,6 +11,7 @@
 @prefix mer: <https://w3id.org/schweidler/semantics/qa-kg/meronymy#> .
 @prefix upper: <https://w3id.org/schweidler/semantics/qa-kg/upper#> .
 @prefix qa: <https://w3id.org/schweidler/semantics/qa-kg#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 
 #################################################################
 # Documentation
@@ -26,7 +27,7 @@
     vann:preferredNamespacePrefix "upont" ;
     vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/upper#" ;
     owl:versionInfo "0.1" ;
-    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, gloss:, mer:, upper:, qa: .
+    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, gloss:, mer:, upper:, qa:, vann: .
 
 #################################################################
 # Core Classes

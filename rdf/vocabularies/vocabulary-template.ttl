@@ -38,11 +38,11 @@
 # Core Classes
 #################################################################
 ex:ClassName a owl:Class ;
-    rdfs:subClassOf ex:ClassName .
+    rdfs:subClassOf ex:ClassName ;
     rdfs:label ""@en ;
     rdfs:comment ""@en ;
     skos:scopeNote ""@en ;
     skos:exactMatch ex:NAMEConcept ;
-    rdfs:isDefinedBy ex:NAMEConcept ;
+    rdfs:isDefinedBy ex:NAMEConcept .
     
 
