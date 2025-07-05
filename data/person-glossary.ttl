@@ -1,0 +1,49 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:  <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix qa: <https://w3id.org/schweidler/semantics/qa#> .
+@prefix rsont: <https://w3id.org/schweidler/semantics/qa-kg/data/rene-schweidler#> .
+@prefix peglo: <https://w3id.org/schweidler/semantics/qa-kg/data/person-glossary#> .
+
+#################################################################
+# Documentation
+#################################################################
+<https://w3id.org/schweidler/semantics/qa-kg/data/person-glossary>
+    a owl:Ontology ;
+    dct:title "Person Glossary"@en ;
+    rdfs:label "Person Glossary" ;
+    dct:description "A SKOS-based glossary of concepts related to the representation of persons in semantic knowledge bases. It includes distinctions between roles, affiliations, contact concepts, and cross-vocabulary alignment to FOAF, Schema.org, and vCard."@en ;
+    dct:language "en" ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date ;
+    dct:modified "2025-07-02"^^xsd:date ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    vann:preferredNamespacePrefix "peglo" ;
+    vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/data/person-glossary#" ;
+    owl:versionIRI <https://schweidler.github.io/pkms/glossaries/person/2025-07-02/person-glossary> ;
+    owl:versionInfo "v2025-07-02" ;
+    owl:imports <http://www.w3.org/2004/02/skos/core> .
+
+#################################################################
+# Concept Scheme
+#################################################################
+
+peglo:PersonGlossaryConceptScheme a skos:ConceptScheme ;
+    skos:prefLabel "Person Glossary Concept Scheme"@en ;
+    dct:description "Glossary of real life individuals (instances of people)."@en ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:issued "2025-07-03"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+#################################################################
+# Core Concepts
+#################################################################
+peglo:ReneSchweidlerConcept
+    a skos:Concept ;
+    skos:prefLabel "René Schweidler"@en ;
+    skos:definition "René Schweidler is a software developer and knowledge engineer with expertise in semantic technologies, testing, and DevOps."@en ;
+    skos:scopeNote "Used as a concept when modeling knowledge about authorship, contributors, or glossary creators."@en ;
+    skos:inScheme peglo:PersonGlossaryConceptScheme ;
+    skos:exactMatch rsont:ReneSchweidler ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date .

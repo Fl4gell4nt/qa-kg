@@ -1,0 +1,66 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rsont: <https://w3id.org/schweidler/semantics/qa-kg/data/ReneSchweidler#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix gloss: <https://w3id.org/schweidler/semantics/qa-kg/glossary#> .
+@prefix mer: <https://w3id.org/schweidler/semantics/qa-kg/meronymy#> .
+@prefix upper: <https://w3id.org/schweidler/semantics/qa-kg/upper#> .
+@prefix qa: <https://w3id.org/schweidler/semantics/qa-kg#> .
+@prefix qavoc: <https://w3id.org/schweidler/semantics/qa-kg/qa-vocabulary#> .
+@prefix coglo: <https://w3id.org/schweidler/semantics/qa-kg/core-glossary#> .
+
+
+#################################################################
+# Documentation
+#################################################################
+<https://w3id.org/schweidler/semantics/qa-kg/core-glossary>
+    a owl:Ontology ;
+    dct:title "Software Qualtiy Assurrance Domain Core Glossary" ;
+    rdfs:label "Software Quality Assurance Glossary for RSPKMS" ;
+    dct:description "SKOS-based glossary of QA, software testing, and agile terms used throughout the RSPKMS." ;
+    dct:language "en" ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date ;
+    dct:modified "2025-07-02"^^xsd:date ;    
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    vann:preferredNamespacePrefix "coglo" ;
+    vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/core-glossary#" ;
+    owl:versionIRI <https://w3id.org/schweidler/semantics/qa-kg/core-glossary/0.1.0/> ;
+    owl:versionInfo "0.1.0" ;
+    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, gloss:, mer:, upper:, qa: .
+
+#################################################################
+# Concept Scheme
+#################################################################
+
+coglo:CoreGlossaryConceptScheme a skos:ConceptScheme ;
+    skos:prefLabel "QA Core Concept Scheme"@en ;
+    dct:description "Glossary of key terms used in the domain of software quality assurance."@en ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:issued "2025-07-03"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+#################################################################
+# Core Concepts
+#################################################################
+coglo:RequirementConcept a skos:Concept ;
+    skos:prefLabel "Requirement"@en ;
+    skos:definition "A documented statement of a condition, capability, or constraint that a system must satisfy to meet a stakeholder’s need or objective."@en ;
+    skos:scopeNote "Use this concept to represent all forms of stakeholder expectations that are expressed as mandatory system behaviors, capabilities, or constraints. This includes both functional and non-functional requirements."@en ;
+    skos:inScheme coglo:CoreGlossaryConceptScheme ;
+    skos:exactMatch qavoc:Requirement ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date .
+
+coglo:ConstraintConcept a skos:Concept ;
+    skos:prefLabel "Constraint"@en ;
+    skos:definition "A requirement that specifies a limitation or condition that restricts design options, such as compliance, interface, technology, budget, or timing."@en ;
+    skos:scopeNote "Use this concept to classify requirements that limit how a system must be built or operated. Examples include regulatory requirements, technology constraints, interoperability obligations, or resource limitations."@en ;
+    skos:inScheme coglo:CoreGlossaryConceptScheme ;
+    skos:exactMatch qavoc:Constraint ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date .

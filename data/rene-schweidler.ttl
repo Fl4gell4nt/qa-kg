@@ -1,0 +1,78 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix porg: <https://w3id.org/schweidler/semantics/qa-kg/org-people#> .
+@prefix rsont: <https://w3id.org/schweidler/semantics/qa-kg/data/rene-schweidler#> .
+
+#################################################################
+# Documentation
+#################################################################
+<https://w3id.org/schweidler/semantics/qa-kg/data/rene-schweidler>
+    a owl:Ontology ;
+    dct:title "Personal Ontology for Rene Schweidler"@en ;
+    dct:description "This ontology describes an individual named Rene Schweidler, including metadata, affiliations, and conceptual identity in a semantic personal knowledge management system (PKMS)."@en ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date ;
+    dct:modified "2025-07-02"^^xsd:date ;
+    dct:publisher rsont:ReneSchweidler ;
+    vann:preferredNamespacePrefix "rsont" ;
+    vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/data/rene-schweidler#" ;
+    owl:versionIRI <https://w3id.org/schweidler/semantics/qa-kg/data/rene-schweidler/0.1.0/> ;
+    owl:versionInfo "0.1.0" ;
+    owl:imports <http://www.w3.org/2002/07/owl#> ,
+                <http://purl.org/dc/terms/> ,
+                <http://purl.org/vocab/vann/> ,
+                <http://xmlns.com/foaf/0.1/> ,
+                <http://www.w3.org/2001/XMLSchema#> ,
+                <http://www.w3.org/2000/01/rdf-schema#> ,
+                <http://schema.org/> ,
+                <http://www.w3.org/2004/02/skos/core#> ,
+                <http://www.w3.org/2006/vcard/ns#> ,
+                <http://www.w3.org/ns/prov#> ,
+                <http://www.w3.org/ns/org#> ,
+                <https://w3id.org/schweidler/semantics/qa-kg/org-people#> ,
+                <https://w3id.org/schweidler/semantics/qa-kg/data/rene-schweidler#> .
+
+#################################################################
+# Core Classes
+#################################################################
+rsont:ReneSchweidler
+    a porg:Person ;
+    rdfs:label "René Schweidler"@en ;
+    rdfs:comment "René Schweidler a knowledge engineer, softwaredeveloper, DevOps and software testing specialist from Vienna."@en ;
+    porg:hasFirstName "René" ;
+    porg:hasLastName "Schweidler" ;
+    porg:hasEmail "rene.schweidler@gmail.com" ;
+    porg:hasExpertise   "Mechatronics/Robotics", 
+                        "Software Development", 
+                        "Software Testing", 
+                        "DevOps", 
+                        "Knowledge Engineering", 
+                        "RDF",
+                        "OWL", 
+                        "SKOS", 
+                        "SHACL", 
+                        "Mechatronics" .
+
+rsont:ReneSchweidlerCV
+    a foaf:Person, schema:Person, vcard:Individual ;
+    rdfs:label "René Schweidler CV"@en ;
+    rdfs:comment "An extended version of rsont:ReneSchweidler as basis for future CV generation from the data."@en ;
+    foaf:name "René Schweidler" ;
+    foaf:mbox <mailto:rene.schweidler@gmail.com> ;
+    schema:jobTitle "Knowledge Engineer, Software Developer, QA Tester" ;
+    schema:email "rene.schweidler@gmail.com" ;
+    schema:knowsAbout "Semantic Web", "Ontologies", "Software Quality Assurance", "RDF", "SPARQL", "DevOps" ;
+    vcard:fn "René Schweidler" ;
+    vcard:hasEmail <mailto:rene.schweidler@gmail.com> ;
+    vcard:role "Semantic Engineering Expert" ;
+    dct:creator rsont:ReneSchweidler ;
+    prov:wasAttributedTo rsont:ReneSchweidler .
+
+rsont:ReneSchweidler owl:sameAs rsont:ReneSchweidlerCV .

@@ -10,11 +10,13 @@
 @prefix gloss: <https://w3id.org/schweidler/semantics/qa-kg/glossary#> .
 @prefix : <https://w3id.org/schweidler/semantics/qa-kg#> .
 
-
+#################################################################
+# Documentation
+#################################################################
 <https://w3id.org/schweidler/semantics/qa-kg/qa>
     a owl:Ontology ;
     dc:title "Software Quality Assurance Domain Ontology" ;
-    dc:creator "Rene Schweidler MSc." ;
+    dc:creator "René Schweidler MSc." ;
     dc:description "Ontology modeling entities that belong to the domain of software quality assurance and testing however are independent from scrum."@en ;
     rdfs:label "Software Quality Assurance Domain Ontology" ;
     owl:versionInfo "0.1" ;
@@ -34,13 +36,6 @@
 #################################################################
 # Core Classes
 #################################################################
-# :ScrumProcess a owl:Class ;
-#     rdfs:label "Scrum Process"@en ;
-#     rdfs:comment "A structured, iterative process based on Scrum principles, encompassing sprints, roles, and events to guide software development."@en ;
-#     skos:scopeNote "Use this class to represent the overall execution of Scrum, often tied to a project or product delivery lifecycle."@en ;
-#     skos:exactMatch gloss:ScrumProcessConcept ;
-#     rdfs:isDefinedBy gloss:ScrumProcessConcept ;
-#     rdfs:subClassOf upper:Activity .
 :SoftwareFunction a owl:Class ;
     rdfs:label "Software Function"@en ;
     rdfs:comment "A distinct capability or behavior implemented by software to fulfill one or more requirements."@en ;
@@ -52,7 +47,7 @@
 :Requirement a owl:Class ;
     rdfs:label "Requirement"@en ;
     rdfs:comment "A documented condition or capability needed by a stakeholder or system to solve a problem or achieve an objective, which must be fulfilled by a software or system component."@en ;
-    skos:scopeNote "Use this concept to describe stakeholder expectations or system obligations that must be satisfied. It includes both functional and non-functional requirements, but should not be confused with implementation details or technical tasks."@en .
+    skos:scopeNote "Use this concept to describe stakeholder expectations or system obligations that must be satisfied. It includes both functional and non-functional requirements, but should not be confused with implementation details or technical tasks."@en ;
     skos:exactMatch gloss:RequirementConcept ;
     rdfs:isDefinedBy gloss:RequirementConcept ;
     rdfs:subClassOf prov:Entity .
@@ -68,23 +63,11 @@
 #################################################################
 # ObjectProperties
 #################################################################
-# :hasEvent a owl:ObjectProperty ;
-#     rdfs:label "has Event"@en ;
-#     rdfs:comment "Associates a Sprint with one or more Scrum Events."@en ;
-#     rdfs:subPropertyOf mer:hasPhase ;   # on meronymic level an event is a phase
-#     rdfs:domain :Sprint ;
-#     rdfs:range :ScrumEvent .
 
 #################################################################
 # DatatypeProperties
 #################################################################
-# :hasDuration a owl:DatatypeProperty ;
-#     rdfs:label "has Duration"@en ;
-#     rdfs:comment "Duration of the Sprint in days."@en ;
-#     rdfs:domain :Sprint ;
-#     rdfs:range xsd:duration .
 
 #################################################################
 # Inverse ObjectProperties
 #################################################################
-#:facilitates owl:inverseOf :isFacilitatedBy .

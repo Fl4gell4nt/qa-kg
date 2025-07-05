@@ -1,0 +1,220 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rsont: <https://w3id.org/schweidler/semantics/qa-kg/data/ReneSchweidler#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix gloss: <https://w3id.org/schweidler/semantics/qa-kg/glossary#> .
+@prefix mer: <https://w3id.org/schweidler/semantics/qa-kg/meronymy#> .
+@prefix upper: <https://w3id.org/schweidler/semantics/qa-kg/upper#> .
+@prefix qa: <https://w3id.org/schweidler/semantics/qa-kg#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix porg: <https://w3id.org/schweidler/semantics/qa-kg/org-people#> .
+
+#################################################################
+# Documentation
+#################################################################
+<https://w3id.org/schweidler/semantics/qa-kg/org-people>
+    a owl:Ontology ;
+    dc:title "People & Organizational Structure Ontology"@en ;
+    rdfs:label "People & Organizational Structure Ontology Module for RSPKMS"@en ;
+    rdfs:comment ""@en ;
+    dct:description "Ontology describing people, roles, departments, reporting lines and responsibilities." ;
+    dct:language "en" ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date ;
+    dct:modified "2025-07-02"^^xsd:date ;    
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    vann:preferredNamespacePrefix "porg" ;
+    vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/org-people-vocabulary#" ;
+    owl:versionIRI <https://w3id.org/schweidler/semantics/qa-kg/org-people-vocabulary/0.1.0/> ;
+    owl:versionInfo "0.1.0" ;
+    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, time:, prov:, gloss:, mer:, upper:, qa:, foaf:, vcard:, org: .
+
+#################################################################
+# Classes
+#################################################################
+
+porg:Person a owl:Class ;
+    rdfs:subClassOf upper:Person ;
+    rdfs:label "Person" ;
+    rdfs:comment "A person in a personal or professional context." ;
+    porg:firstName rdfs:Literal ;
+    porg:lastName rdfs:Literal .
+
+porg:Interaction a owl:Class ;
+    rdfs:label "Interaction" ;
+    rdfs:comment "An interaction or communication between one or more people." .
+
+porg:Organization a owl:Class ;
+    rdfs:subClassOf upper:Organization ;
+    rdfs:label "Organization" .
+
+porg:Affiliation a owl:Class ;
+    rdfs:label "Affiliation" ;
+    rdfs:comment "A person's role or membership in an organization." .
+
+porg:Relationship a owl:Class ;
+    rdfs:label "Relationship" ;
+    rdfs:comment "A personal or professional relationship between people." .
+
+porg:CommunicationChannel a owl:Class ;
+    rdfs:label "Communication Channel" ;
+    rdfs:comment "Medium of communication (e.g. email, phone, Slack)." .
+
+porg:Event a owl:Class ;
+    rdfs:subClassOf upper:Event ;
+    rdfs:label "Event" ;
+    rdfs:comment "A time-bounded occurrence involving one or more people." .
+
+porg:Note a owl:Class ;
+    rdfs:label "Note" ;
+    rdfs:comment "A note taken about a person or interaction." .
+
+porg:Document a owl:Class ;
+    rdfs:subClassOf upper:Artifact ;
+    rdfs:label "Document" ;
+    rdfs:comment "A shared document or file associated with an interaction." .
+
+porg:ContactMethod a owl:Class ;
+    rdfs:label "Contact Method" ;
+    rdfs:comment "A means of contacting a person (email, phone, etc.)." .
+
+#################################################################
+# Object Properties
+#################################################################
+
+porg:interactedWith a owl:ObjectProperty ;
+    rdfs:label "interacted with" ;
+    rdfs:comment "Links an interaction to the person who was the subject or counterpart of that interaction."@en ;
+    skos:scopeNote "Use this property to specify who was involved in an interaction, such as a meeting or message exchange."@en ;
+    rdfs:domain porg:Interaction ;
+    rdfs:range porg:Person .
+
+porg:participant a owl:ObjectProperty ;
+    rdfs:label "participant" ;
+    rdfs:comment "Indicates a person who took part in an event."@en ;
+    skos:scopeNote "Use this property to associate individuals with events like workshops, calls, or conferences."@en ;
+    rdfs:domain porg:Event ;
+    rdfs:range porg:Person .
+
+porg:hasAffiliation a owl:ObjectProperty ;
+    rdfs:label "has affiliation" ;
+    rdfs:comment "Links a person to their affiliation, such as employment, membership, or academic role."@en ;
+    skos:scopeNote "Use this property to track affiliations over time, including past and current professional or organizational links."@en ;
+    rdfs:domain porg:Person ;
+    rdfs:range porg:Affiliation .
+
+porg:memberOf a owl:ObjectProperty ;
+    rdfs:label "member of" ;
+    rdfs:comment "Connects an affiliation record to the organization a person is affiliated with."@en ;
+    skos:scopeNote "Use this to specify the organization or institution in which a person holds a role."@en ;
+    rdfs:domain porg:Affiliation ;
+    rdfs:range porg:Organization .
+
+porg:hasRole a owl:ObjectProperty ;
+    rdfs:label "has role" ;
+    rdfs:comment "Describes the specific role or position held by a person within an affiliation."@en ;
+    skos:scopeNote "Use a human-readable literal value (e.g., 'Software Engineer', 'Professor') to describe the person's title or function."@en ;
+    rdfs:domain porg:Affiliation ;
+    rdfs:range rdfs:Literal .
+
+porg:relatedTo a owl:ObjectProperty ;
+    rdfs:label "related to" ;
+    rdfs:comment "Expresses a general personal relationship between two people."@en ;
+    skos:scopeNote "Use to indicate familial, professional, or social connections between individuals. Prefer more specific properties if available."@en ;
+    rdfs:domain porg:Person ;
+    rdfs:range porg:Person .
+
+porg:usesChannel a owl:ObjectProperty ;
+    rdfs:label "uses channel" ;
+    rdfs:comment "Specifies the communication channel used in a particular interaction."@en ;
+    skos:scopeNote "Use to track whether the interaction was by phone, email, chat, video conference, etc."@en ;
+    rdfs:domain porg:Interaction ;
+    rdfs:range porg:CommunicationChannel .
+
+porg:hasDocument a owl:ObjectProperty ;
+    rdfs:label "has document" ;
+    rdfs:comment "Indicates that a document was produced, referenced, or exchanged during an interaction."@en ;
+    skos:scopeNote "Use this to associate supporting documents like agendas, reports, or contracts with an interaction."@en ;
+    rdfs:domain porg:Interaction ;
+    rdfs:range porg:Document .
+
+porg:hasNote a owl:ObjectProperty ;
+    rdfs:label "has note" ;
+    rdfs:comment "Associates a free-form note with a specific interaction."@en ;
+    skos:scopeNote "Use this to link recorded observations, minutes, or remarks to the interaction they document."@en ;
+    rdfs:domain porg:Interaction ;
+    rdfs:range porg:Note .
+
+porg:documentedBy a owl:ObjectProperty ;
+    rdfs:label "documented by" ;
+    rdfs:comment "Links an interaction to a provenance entity that documents it."@en ;
+    skos:scopeNote "Use this property when the documentation of an interaction is modeled as a separate PROV entity."@en ;
+    rdfs:domain porg:Interaction ;
+    rdfs:range prov:Entity .
+
+#################################################################
+# Datatype Properties
+#################################################################
+
+porg:firstName a owl:DatatypeProperty ;
+    rdfs:label "first name" ;
+    rdfs:comment "The given name of a person, typically assigned at birth and used as the primary identifier."@en ;
+    skos:scopeNote "Use this property to capture the personal first name of an individual for identification or personalization purposes."@en ;
+    rdfs:domain porg:Person ;
+    rdfs:range xsd:string .
+
+porg:middleName a owl:DatatypeProperty ;
+    rdfs:label "middle name" ;
+    rdfs:comment "An optional name given to a person in addition to their first and last names, often used to honor relatives or distinguish individuals."@en ;
+    skos:scopeNote "Use this property to record middle names when relevant or available, especially for formal or legal identification."@en ;
+    rdfs:domain porg:Person ;
+    rdfs:range xsd:string .
+
+porg:lastName a owl:DatatypeProperty ;
+    rdfs:label "last name" ;
+    rdfs:comment "The family or surname of a person, typically passed from one generation to the next."@en ;
+    skos:scopeNote "Use this property to store a person's family name for sorting, grouping, or formal address purposes."@en ;
+    rdfs:domain porg:Person ;
+    rdfs:range xsd:string .
+
+porg:interactionDate a owl:DatatypeProperty ;
+    rdfs:label "interaction date" ;
+    rdfs:comment "The date and time when a specific interaction between individuals or systems took place."@en ;
+    skos:scopeNote "Use this property to log the precise timestamp of meetings, emails, messages, or other interpersonal or system interactions."@en ;
+    rdfs:domain porg:Interaction ;
+    rdfs:range xsd:dateTime .
+
+porg:noteText a owl:DatatypeProperty ;
+    rdfs:label "note text" ;
+    rdfs:comment "The textual content or body of a note, typically containing observations, remarks, or other relevant information."@en ;
+    skos:scopeNote "Use this property to capture free-form text notes taken during an interaction, meeting, or observation."@en ;
+    rdfs:domain porg:Note ;
+    rdfs:range xsd:string .
+
+porg:documentTitle a owl:DatatypeProperty ;
+    rdfs:label "document title" ;
+    rdfs:comment "The official or descriptive title of a document, used to identify and reference it."@en ;
+    skos:scopeNote "Apply this property to record the title that appears on or is officially assigned to a document."@en ;
+    rdfs:domain porg:Document ;
+    rdfs:range xsd:string .
+
+porg:contactValue a owl:DatatypeProperty ;
+    rdfs:label "contact value" ;
+    rdfs:comment "The actual contact information value, such as an email address, phone number, or other communication identifier."@en ;
+    skos:scopeNote "Use this property to store raw contact values such as 'john.doe@example.org' or '+43-123-456789'."@en ;
+    rdfs:domain porg:ContactMethod ;
+    rdfs:range xsd:string .
+
+porg:channelType a owl:DatatypeProperty ;
+    rdfs:label "channel type" ;
+    rdfs:comment "The type of communication channel used, such as email, phone, chat, or in-person meeting."@en ;
+    skos:scopeNote "Use this property to categorize the medium through which communication occurred, e.g., 'email', 'voice call', 'video', 'instant message'."@en ;
+    rdfs:domain porg:CommunicationChannel ;
+    rdfs:range xsd:string .

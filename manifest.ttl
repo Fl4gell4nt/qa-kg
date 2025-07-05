@@ -1,5 +1,5 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix dc:  <http://purl.org/dc/terms/> .
+@prefix dct:  <http://purl.org/dc/terms/> .
 
 #################################################################
 # Manifest Ontology: Entry point for Schweidler's Semantic PKMS
@@ -10,9 +10,9 @@
 
 <https://w3id.org/schweidler/semantics/qa-kg>
     a owl:Ontology ;
-    dc:title "Schweidler Semantic PKMS — QA Knowledge Graph" ;
-    dc:creator "Schweidler" ;
-    dc:description "Manifest ontology importing all core modules used to represent QA knowledge, people, documents, events, and domain concepts." ;
+    dct:title "Schweidler Semantic PKMS — QA Knowledge Graph" ;
+    dct:creator "René Schweidler" ;
+    dct:description "Manifest ontology importing all core modules used to represent QA knowledge, people, documents, events, and domain concepts." ;
     owl:versionInfo "0.1" ;
 
     #################################################################
@@ -20,9 +20,11 @@
     #################################################################
 
     owl:imports
-        <https://w3id.org/schweidler/semantics/qa-kg/rdf/1_upper> ,          # Upper ontology for high-level concepts
-        <https://w3id.org/schweidler/semantics/qa-kg/rdf/2_glossary> ,       # SKOS terms and domain definitions
-        <https://w3id.org/schweidler/semantics/qa-kg/rdf/3_meronymy> ,       # Meronymy ontology for detailed part/whole relations
+        <https://w3id.org/schweidler/semantics/qa-kg/rdf/upper> ,          # Upper ontology for high-level concepts
+        <https://w3id.org/schweidler/semantics/qa-kg/rdf/core-glossary> ,       # SKOS terms and domain definitions
+        <https://w3id.org/schweidler/semantics/qa-kg/rdf/scrum-glossary> ,       # SKOS terms and domain definitions
+        <https://w3id.org/schweidler/semantics/qa-kg/rdf/test-glossary> ,       # SKOS terms and domain definitions
+        <https://w3id.org/schweidler/semantics/qa-kg/rdf/meronymy> ,       # Meronymy ontology for detailed part/whole relations
         <https://w3id.org/schweidler/semantics/qa-kg/rdf/4_qa-taxonomy> ,    # OWL taxonomy for test levels/types
         <https://w3id.org/schweidler/semantics/qa-kg/rdf/5_scrum> ,          # Events, roles, artifacts in Scrum
         <https://w3id.org/schweidler/semantics/qa-kg/rdf/6_org-people> ,     # People, roles, and org structure

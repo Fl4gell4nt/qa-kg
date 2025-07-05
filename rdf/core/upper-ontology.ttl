@@ -1,58 +1,72 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix dc:  <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rsont: <https://w3id.org/schweidler/semantics/qa-kg/data/ReneSchweidler#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix org: <http://www.w3.org/ns/org#> .
-@prefix : <https://w3id.org/schweidler/semantics/qa-kg#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix gloss: <https://w3id.org/schweidler/semantics/qa-kg/glossary#> .
+@prefix mer: <https://w3id.org/schweidler/semantics/qa-kg/meronymy#> .
+@prefix upper: <https://w3id.org/schweidler/semantics/qa-kg/upper#> .
+@prefix qa: <https://w3id.org/schweidler/semantics/qa-kg#> .
 
+#################################################################
+# Documentation
+#################################################################
 <https://w3id.org/schweidler/semantics/qa-kg/upper>
     a owl:Ontology ;
-    dc:title "Schweidler Semantic PKMS Upper Ontology" ;
-    dc:creator "Rene Schweidler MSc." ;
-    dc:description "Upper ontology defining foundational classes and properties for software QA, knowledge artifacts, events, people, and roles." ;
+    dct:title "Schweidler Semantic PKMS Upper Ontology" ;
+    dct:creator "René Schweidler MSc." ;
+    dct:description "Upper ontology defining foundational classes and properties for software QA, knowledge artifacts, events, people, and roles." ;
+    dct:created "2025-07-05"^^xsd:date ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     rdfs:label "Upper Ontology Module for RSPKMS" ;
-    owl:versionInfo "0.1" .
+    vann:preferredNamespacePrefix "upont" ;
+    vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/upper#" ;
+    owl:versionInfo "0.1" ;
+    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, gloss:, mer:, upper:, qa: .
 
 #################################################################
 # Core Classes
 #################################################################
-
-:Agent
+upper:Agent
     a owl:Class ;
     rdfs:label "Agent"@en ;
     rdfs:comment "An entity capable of intentional action (person, organization, software agent)."@en .
 
-:Person
+upper:Person
     a owl:Class ;
     rdfs:subClassOf :Agent ;
     rdfs:subClassOf foaf:Person ;
     rdfs:label "Person"@en ;
     rdfs:comment "A human being."@en .
 
-:Organization
+upper:Organization
     a owl:Class ;
     rdfs:subClassOf :Agent ;
     rdfs:subClassOf org:Organization ;
     rdfs:label "Organization"@en ;
     rdfs:comment "An organized group of people, such as a company or department."@en .
 
-:Role
+upper:Role
     a owl:Class ;
     rdfs:label "Role"@en ;
     rdfs:comment "A function or responsibility assigned to an agent."@en .
 
-:Activity
+upper:Activity
     a owl:Class ;
     rdfs:label "Activity"@en ;
     rdfs:comment "A process or action performed by agents."@en .
 
-:Event
+upper:Event
     a owl:Class ;
     rdfs:subClassOf :Activity ;
     rdfs:label "Event"@en ;
     rdfs:comment "An occurrence or happening at a point or interval in time."@en .
 
-:Artifact
+upper:Artifact
     a owl:Class ;
     rdfs:label "Artifact"@en ;
     rdfs:comment "A physical or digital object created, used, or modified during activities."@en .
@@ -61,35 +75,35 @@
 # Core Properties
 #################################################################
 
-:hasRole
+upper:hasRole
     a owl:ObjectProperty ;
     rdfs:label "has role"@en ;
     rdfs:domain :Agent ;
     rdfs:range :Role ;
     rdfs:comment "Associates an agent with a role they fulfill."@en .
 
-:participatesIn
+upper:participatesIn
     a owl:ObjectProperty ;
     rdfs:label "participates in"@en ;
     rdfs:domain :Agent ;
     rdfs:range :Activity ;
     rdfs:comment "Indicates participation of an agent in an activity."@en .
 
-:produces
+upper:produces
     a owl:ObjectProperty ;
     rdfs:label "produces"@en ;
     rdfs:domain :Activity ;
     rdfs:range :Artifact ;
     rdfs:comment "Indicates that an activity results in the creation or modification of an artifact."@en .
 
-:hasParticipant
+upper:hasParticipant
     a owl:ObjectProperty ;
     rdfs:label "has participant"@en ;
     rdfs:domain :Activity ;
     rdfs:range :Agent ;
     rdfs:comment "Indicates agents involved in an activity."@en .
 
-:relatedTo
+upper:relatedTo
     a owl:ObjectProperty ;
     rdfs:label "related to"@en ;
     rdfs:comment "General-purpose relation to link concepts or entities."@en .
@@ -98,16 +112,17 @@
 # Data Properties
 #################################################################
 
-:startTime
+upper:startTime
     a owl:DatatypeProperty ;
     rdfs:label "start time"@en ;
+    rdfs:comment "Timestamp indicating when an event starts."@en ;
     rdfs:domain :Event ;
-    rdfs:range xsd:dateTime ;
-    rdfs:comment "Timestamp indicating when an event starts."@en .
+    rdfs:range xsd:dateTime .
 
-:endTime
+upper:endTime
     a owl:DatatypeProperty ;
     rdfs:label "end time"@en ;
+    rdfs:comment "Timestamp indicating when an event ends."@en ;
     rdfs:domain :Event ;
-    rdfs:range xsd:dateTime ;
-    rdfs:comment "Timestamp indicating when an event ends."@en .
+    rdfs:range xsd:dateTime .
+    

@@ -2,7 +2,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
-@prefix : <https://w3id.org/schweidler/semantics/qa-kg#> .
+@prefix mer: <https://w3id.org/schweidler/semantics/qa-kg/meronymy#> .
 
 <https://w3id.org/schweidler/semantics/qa-kg/meronymy> a owl:Ontology ;
     dc:title "Meronymy Ontology for Schweidler Semantic PKMS" ;
@@ -12,44 +12,63 @@
     rdfs:label "Meronymy Ontology Module (DUL-based) for RSPKMS" ;
     owl:imports <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> .
 
-### Meronymy relations (each rdfs:subPropertyOf dul:hasPart)
-
-:hasComponent a owl:ObjectProperty ;
+#################################################################
+# Meronymy relations
+#################################################################
+mer:hasComponent a owl:ObjectProperty ;
     rdfs:label "has component" ;
     rdfs:comment "Indicates a functional or structural component of a whole." ;
     rdfs:subPropertyOf dul:hasComponent .
 
-:hasMember a owl:ObjectProperty ;
+mer:hasMember a owl:ObjectProperty ;
     rdfs:label "has member" ;
     rdfs:comment "Indicates that the whole is a collection or group containing this member." ;
     rdfs:subPropertyOf dul:hasMember .
 
-:hasConstituent a owl:ObjectProperty ;
+mer:hasConstituent a owl:ObjectProperty ;
     rdfs:label "has constituent" ;
     rdfs:comment "Indicates that the whole is materially constituted by the part (e.g., object-substance)." ;
     rdfs:subPropertyOf dul:hasConstituent .
 
-:hasPortion a owl:ObjectProperty ;
+mer:hasPortion a owl:ObjectProperty ;
     rdfs:label "has portion" ;
     rdfs:comment "Indicates a part of a mass or homogeneous quantity (e.g., a slice of cake)." ;
     rdfs:subPropertyOf dul:hasPart .
 
-:hasPlacePart a owl:ObjectProperty ;
+mer:hasPlacePart a owl:ObjectProperty ;
     rdfs:label "has place-part" ;
     rdfs:comment "Indicates spatial inclusion of a sub-area within a region (e.g., Vienna within Austria)." ;
     rdfs:subPropertyOf dul:hasPart .
 
-:hasPhase a owl:ObjectProperty ;
+mer:hasPhase a owl:ObjectProperty ;
     rdfs:label "has phase" ;
     rdfs:comment "Indicates a temporal or developmental stage or phase of a process." ;
     rdfs:subPropertyOf dul:hasPart .
 
-### Optionally: define inverses (can be reused later)
+#################################################################
+# Inverse relations
+#################################################################
+mer:isComponentOf owl:inverseOf mer:hasComponent ;
+    rdfs:label "is component of" ;
+    rdfs:comment "Inverse property of hasComponent." .
 
-:isComponentOf owl:inverseOf :hasComponent .
-:isMemberOf owl:inverseOf :hasMember .
-:isConstituentOf owl:inverseOf :hasConstituent .
-:isPortionOf owl:inverseOf :hasPortion .
-:isPlacePartOf owl:inverseOf :hasPlacePart .
-:isPhaseOf owl:inverseOf :hasPhase .
+mer:isMemberOf owl:inverseOf mer:hasMember ;
+    rdfs:label "is member of" ;
+    rdfs:comment "Inverse property of hasMember." .
+
+mer:isConstituentOf owl:inverseOf mer:hasConstituent ;
+    rdfs:label "is constituent of" ;
+    rdfs:comment "Inverse property of hasConstituent." .
+
+mer:isPortionOf owl:inverseOf mer:hasPortion ;
+    rdfs:label "is portion of" ;
+    rdfs:comment "Inverse property of hasPortion." .
+
+mer:isPlacePartOf owl:inverseOf mer:hasPlacePart ;
+    rdfs:label "is place part of" ;
+    rdfs:comment "Inverse property of hasPlacePart." .
+
+mer:isPhaseOf owl:inverseOf mer:hasPhase ;
+    rdfs:label "is phase of" ;
+    rdfs:comment "Inverse property of hasPhase." .
 

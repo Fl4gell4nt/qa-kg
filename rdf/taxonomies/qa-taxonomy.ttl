@@ -1,12 +1,12 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dc:  <http://purl.org/dc/terms/> .
-@prefix : <https://w3id.org/schweidler/semantics/qa-kg#> .
+@prefix qtax: <https://w3id.org/schweidler/semantics/qa-kg/qa-taxonomy#> .
 
 <https://w3id.org/schweidler/semantics/qa-kg/qa-taxonomy>
     a owl:Ontology ;
     dc:title "Software QA Domain Taxonomy" ;
-    dc:creator "Rene Schweidler MSc." ;
+    dc:creator "René Schweidler MSc." ;
     dc:description "OWL class hierarchy defining test levels, types, and QA techniques in software quality assurance." ;
     rdfs:label "Quality Assurance Domain Taxonomy Module for RSPKMS" ;
     owl:versionInfo "0.1" .

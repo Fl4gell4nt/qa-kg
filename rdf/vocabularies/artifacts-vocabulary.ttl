@@ -1,11 +1,11 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc:  <http://purl.org/dc/terms/> .
-@prefix : <https://w3id.org/schweidler/semantics/qa-kg#> .
+@prefix art: <https://w3id.org/schweidler/semantics/qa-kg/artifacts#> .
 
 <https://w3id.org/schweidler/semantics/qa-kg/artifacts>
     a owl:Ontology ;
     dc:title "Knowledge Artifact Ontology" ;
-    dc:creator "Rene Schweidler MSc." ;
+    dc:creator "René Schweidler MSc." ;
     dc:description "Ontology using Dublin Core terms to describe documents, templates, checklists, reports, specs, and other work-related knowledge objects." ;
     owl:versionInfo "0.1" ;
     owl:imports <http://purl.org/dc/terms/> .

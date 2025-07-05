@@ -1,0 +1,325 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rsont: <https://w3id.org/schweidler/semantics/qa-kg/data/ReneSchweidler#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix gloss: <https://w3id.org/schweidler/semantics/qa-kg/glossary#> .
+@prefix mer: <https://w3id.org/schweidler/semantics/qa-kg/meronymy#> .
+@prefix upper: <https://w3id.org/schweidler/semantics/qa-kg/upper#> .
+@prefix qa: <https://w3id.org/schweidler/semantics/qa-kg#> .
+@prefix tglo: <https://w3id.org/schweidler/semantics/qa-kg/test-glossary#> .
+
+#################################################################
+# Documentation
+#################################################################
+<https://w3id.org/schweidler/semantics/qa-kg/test-glossary/>
+    a owl:Ontology ;
+    dct:title "Tests Glossary"@en ;
+    rdfs:label "Test Glossary for RSPKMS" ;
+    rdfs:comment ""@en ;
+    dct:description "A SKOS-based glossary of software testing concepts, including classifications such as functional vs non-functional tests, regression testing, integration testing, unit testing, performance testing, and other related terms used in quality assurance and software validation."@en ;
+    dct:language "en" ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date ;
+    dct:modified "2025-07-02"^^xsd:date ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    vann:preferredNamespacePrefix "tglo" ;
+    vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/test-glossary#" ;
+    owl:versionIRI <https://w3id.org/schweidler/semantics/qa-kg/test-glossary/0.1.0/> ;
+    owl:versionInfo "v2025-07-02" ;
+    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, gloss:, mer:, upper:, qa: .
+
+#################################################################
+# Concept Scheme
+#################################################################
+
+tglo:TestConceptScheme a skos:ConceptScheme ;
+    skos:prefLabel "Software Test Terminology Concept Scheme"@en ;
+    dct:description "Glossary of key software testing terms used in the software quality assurance knowledge graph."@en ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:issued "2025-07-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+#################################################################
+# Software Test Concepts
+#################################################################
+
+tglo:SoftwareTest a skos:Concept ;
+    skos:prefLabel "Software Test"@en ;
+    skos:definition "A procedure carried out to evaluate a software system or component."@en ;
+    skos:scopeNote "Use this concept to group all types of software tests aimed at validating system quality."@en ;
+    skos:inScheme tglo:SoftwareTest ;
+    skos:exactMatch tglo:SoftwareTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+#################################################################
+# Categories of Tests
+#################################################################
+tglo:FunctionalTest a skos:Concept ;
+    skos:prefLabel "Functional Test"@en ;
+    skos:definition "Tests that verify specific functions of the software, typically based on requirements."@en ;
+    skos:scopeNote "Use this concept for tests that validate the functional behavior of the system."@en ;
+    skos:inScheme tglo:FunctionalTest ;
+    skos:broader tglo:SoftwareTest ;
+    skos:exactMatch tglo:FunctionalTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+tglo:NonFunctionalTest a skos:Concept ;
+    skos:prefLabel "Non-Functional Test"@en ;
+    skos:definition "Tests that verify non-functional aspects such as performance, usability, and reliability."@en ;
+    skos:scopeNote "Use this concept for tests not directly tied to specific functionality, but important system qualities."@en ;
+    skos:inScheme tglo:NonFunctionalTest ;
+    skos:broader tglo:SoftwareTest ;
+    skos:exactMatch tglo:NonFunctionalTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+#################################################################
+# Functional Test Types
+#################################################################
+tglo:UnitTest a skos:Concept ;
+    skos:prefLabel "Unit Test"@en ;
+    skos:definition "Tests that focus on individual components or functions in isolation."@en ;
+    skos:scopeNote "Use this concept for fine-grained tests targeting a single module, class, or function."@en ;
+    skos:inScheme tglo:UnitTest ;
+    skos:broader tglo:FunctionalTest ;
+    skos:exactMatch tglo:UnitTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+tglo:IntegrationTest a skos:Concept ;
+    skos:prefLabel "Integration Test"@en ;
+    skos:definition "Tests that verify interactions between integrated components or systems."@en ;
+    skos:scopeNote "Use this concept for validating interfaces and data flow between units or subsystems."@en ;
+    skos:inScheme tglo:IntegrationTest ;
+    skos:broader tglo:FunctionalTest ;
+    skos:exactMatch tglo:IntegrationTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+tglo:SystemTest a skos:Concept ;
+    skos:prefLabel "System Test"@en ;
+    skos:definition "Tests that validate the complete and integrated software system against the requirements."@en ;
+    skos:scopeNote "Use this concept for validating the system as a whole, post integration of all modules."@en ;
+    skos:inScheme tglo:SystemTest ;
+    skos:broader tglo:FunctionalTest ;
+    skos:exactMatch tglo:SystemTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+tglo:AcceptanceTest a skos:Concept ;
+    skos:prefLabel "Acceptance Test"@en ;
+    skos:definition "Tests conducted to determine if the system meets acceptance criteria and is ready for delivery."@en ;
+    skos:scopeNote "Use this concept for stakeholder-facing tests validating delivery readiness."@en ;
+    skos:inScheme tglo:AcceptanceTest ;
+    skos:broader tglo:FunctionalTest ;
+    skos:exactMatch tglo:AcceptanceTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+tglo:RegressionTest a skos:Concept ;
+    skos:prefLabel "Regression Test"@en ;
+    skos:definition "Tests that ensure new code changes do not adversely affect existing functionality."@en ;
+    skos:scopeNote "Use this concept for verifying that updates don't break current behavior."@en ;
+    skos:inScheme tglo:RegressionTest ;
+    skos:broader tglo:FunctionalTest ;
+    skos:exactMatch tglo:RegressionTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+tglo:SmokeTest a skos:Concept ;
+    skos:prefLabel "Smoke Test"@en ;
+    skos:definition "Preliminary tests to check basic functionality after a build or deployment."@en ;
+    skos:scopeNote "Use this concept for fast, surface-level checks to validate that the most important features work."@en ;
+    skos:inScheme tglo:SmokeTest ;
+    skos:broader tglo:FunctionalTest ;
+    skos:exactMatch tglo:SmokeTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+tglo:SanityTest a skos:Concept ;
+    skos:prefLabel "Sanity Test"@en ;
+    skos:definition "Subset of regression tests focusing on specific functionality after changes or fixes."@en ;
+    skos:scopeNote "Use this concept for targeted validation that a specific defect fix or change works as intended."@en ;
+    skos:inScheme tglo:SanityTest ;
+    skos:broader tglo:FunctionalTest ;
+    skos:exactMatch tglo:SanityTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+tglo:EndToEndTest a skos:Concept ;
+    skos:prefLabel "End-to-End Test"@en ;
+    skos:definition "Tests that simulate real user scenarios from start to finish to validate system flow."@en ;
+    skos:scopeNote "Use this concept to represent holistic workflows that span multiple systems or modules in production-like conditions."@en ;
+    skos:inScheme tglo:EndToEndTest ;
+    skos:broader tglo:FunctionalTest ;
+    skos:exactMatch tglo:EndToEndTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+#################################################################
+# Non-Functional Test Types
+#################################################################
+tglo:PerformanceTest a skos:Concept ;
+    skos:prefLabel "Performance Test"@en ;
+    skos:definition "Tests that measure how the system performs under certain conditions (load, stress, etc.)."@en ;
+    skos:scopeNote "Use this concept for evaluating speed, responsiveness, and stability under expected or extreme workload."@en ;
+    skos:inScheme tglo:PerformanceTest ;
+    skos:broader tglo:NonFunctionalTest ;
+    skos:exactMatch tglo:PerformanceTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+tglo:LoadTest a skos:Concept ;
+    skos:prefLabel "Load Test"@en ;
+    skos:definition "Tests the system’s performance under expected user load."@en ;
+    skos:scopeNote "Use this concept to validate performance under normal usage conditions, including peak loads."@en ;
+    skos:inScheme tglo:LoadTest ;
+    skos:broader tglo:PerformanceTest ;
+    skos:exactMatch tglo:LoadTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+tglo:StressTest a skos:Concept ;
+    skos:prefLabel "Stress Test"@en ;
+    skos:definition "Tests the system’s robustness under extreme or unexpected load."@en ;
+    skos:scopeNote "Use this concept to determine system limits and behavior under high load or resource exhaustion."@en ;
+    skos:inScheme tglo:StressTest ;
+    skos:broader tglo:PerformanceTest ;
+    skos:exactMatch tglo:StressTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+tglo:SpikeTest a skos:Concept ;
+    skos:prefLabel "Spike Test"@en ;
+    skos:definition "Tests the system’s behavior under sudden and extreme increases in load."@en ;
+    skos:scopeNote "Use this concept to evaluate how systems react and recover from abrupt traffic spikes."@en ;
+    skos:inScheme tglo:SpikeTest ;
+    skos:broader tglo:PerformanceTest ;
+    skos:exactMatch tglo:SpikeTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+tglo:ScalabilityTest a skos:Concept ;
+    skos:prefLabel "Scalability Test"@en ;
+    skos:definition "Tests the system’s ability to scale up or down to meet user demands."@en ;
+    skos:scopeNote "Use this concept to assess whether a system can accommodate growth in usage or data volume."@en ;
+    skos:inScheme tglo:ScalabilityTest ;
+    skos:broader tglo:PerformanceTest ;
+    skos:exactMatch tglo:ScalabilityTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+tglo:SecurityTest a skos:Concept ;
+    skos:prefLabel "Security Test"@en ;
+    skos:definition "Tests that identify vulnerabilities and security flaws in the system."@en ;
+    skos:scopeNote "Use this concept to group tests that focus on data protection, access control, and attack resistance."@en ;
+    skos:inScheme tglo:SecurityTest ;
+    skos:broader tglo:NonFunctionalTest ;
+    skos:exactMatch tglo:SecurityTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+tglo:UsabilityTest a skos:Concept ;
+    skos:prefLabel "Usability Test"@en ;
+    skos:definition "Tests that assess the software’s user interface and user experience."@en ;
+    skos:scopeNote "Use this concept to evaluate how easy and intuitive the system is for end users."@en ;
+    skos:inScheme tglo:UsabilityTest ;
+    skos:broader tglo:NonFunctionalTest ;
+    skos:exactMatch tglo:UsabilityTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+tglo:CompatibilityTest a skos:Concept ;
+    skos:prefLabel "Compatibility Test"@en ;
+    skos:definition "Tests the software’s behavior across different browsers, OSs, devices, and networks."@en ;
+    skos:scopeNote "Use this concept for validation across multiple platforms, configurations, and environments."@en ;
+    skos:inScheme tglo:CompatibilityTest ;
+    skos:broader tglo:NonFunctionalTest ;
+    skos:exactMatch tglo:CompatibilityTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+tglo:ReliabilityTest a skos:Concept ;
+    skos:prefLabel "Reliability Test"@en ;
+    skos:definition "Tests the system’s stability and error-free operation over time."@en ;
+    skos:scopeNote "Use this concept to ensure that systems can operate continuously without failure."@en ;
+    skos:inScheme tglo:ReliabilityTest ;
+    skos:broader tglo:NonFunctionalTest ;
+    skos:exactMatch tglo:ReliabilityTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+tglo:MaintainabilityTest a skos:Concept ;
+    skos:prefLabel "Maintainability Test"@en ;
+    skos:definition "Evaluates how easily the software can be modified, updated, or extended."@en ;
+    skos:scopeNote "Use this concept to assess the software’s internal quality and future change readiness."@en ;
+    skos:inScheme tglo:MaintainabilityTest ;
+    skos:broader tglo:NonFunctionalTest ;
+    skos:exactMatch tglo:MaintainabilityTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+tglo:RecoveryTest a skos:Concept ;
+    skos:prefLabel "Recovery Test"@en ;
+    skos:definition "Tests the system’s ability to recover from crashes, hardware failures, or other major problems."@en ;
+    skos:scopeNote "Use this concept to verify that the system can resume operations after disruption."@en ;
+    skos:inScheme tglo:RecoveryTest ;
+    skos:broader tglo:NonFunctionalTest ;
+    skos:exactMatch tglo:RecoveryTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+#################################################################
+# Exploratory and Other Test Types
+#################################################################
+tglo:ExploratoryTest a skos:Concept ;
+    skos:prefLabel "Exploratory Test"@en ;
+    skos:definition "Simultaneous learning, test design, and execution by testers exploring the system."@en ;
+    skos:scopeNote "Use this concept when testers dynamically explore and evaluate the system without predefined scripts."@en ;
+    skos:inScheme tglo:ExploratoryTest ;
+    skos:broader tglo:SoftwareTest ;
+    skos:exactMatch tglo:ExploratoryTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+tglo:AdHocTest a skos:Concept ;
+    skos:prefLabel "Ad Hoc Test"@en ;
+    skos:definition "Informal testing without planning or documentation to find defects quickly."@en ;
+    skos:scopeNote "Use this concept for unstructured and impromptu testing activities."@en ;
+    skos:inScheme tglo:AdHocTest ;
+    skos:broader tglo:SoftwareTest ;
+    skos:exactMatch tglo:AdHocTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+tglo:AlphaTest a skos:Concept ;
+    skos:prefLabel "Alpha Test"@en ;
+    skos:definition "In-house acceptance testing by internal teams before releasing the product to external users."@en ;
+    skos:scopeNote "Use this concept for early-stage testing by the organization developing the product."@en ;
+    skos:inScheme tglo:AlphaTest ;
+    skos:broader tglo:AcceptanceTest ;
+    skos:exactMatch tglo:AlphaTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+tglo:BetaTest a skos:Concept ;
+    skos:prefLabel "Beta Test"@en ;
+    skos:definition "External user testing to validate the software in a real environment before full release."@en ;
+    skos:scopeNote "Use this concept for feedback-driven testing with real users outside the development team."@en ;
+    skos:inScheme tglo:BetaTest ;
+    skos:broader tglo:AcceptanceTest ;
+    skos:exactMatch tglo:BetaTest ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date .
+
+
+
+
+
+
+

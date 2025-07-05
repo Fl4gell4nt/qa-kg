@@ -1,0 +1,244 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rsont: <https://w3id.org/schweidler/semantics/qa-kg/data/ReneSchweidler#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix gloss: <https://w3id.org/schweidler/semantics/qa-kg/glossary#> .
+@prefix mer: <https://w3id.org/schweidler/semantics/qa-kg/meronymy#> .
+@prefix upper: <https://w3id.org/schweidler/semantics/qa-kg/upper#> .
+@prefix qa: <https://w3id.org/schweidler/semantics/qa-kg#> .
+@prefix scvoc: <https://w3id.org/schweidler/semantics/qa-kg/scrum-vocabulary#> .
+@prefix scglo: <https://w3id.org/schweidler/semantics/qa-kg/glossaries/domain/scrum-glossary#> .
+
+#################################################################
+# Documentation
+#################################################################
+<https://w3id.org/schweidler/semantics/qa-kg/glossaries/domain/scrum-glossary>
+    a owl:Ontology ;
+    dct:title "Scrum Glossary"@en ;
+    dct:description "A SKOS-based glossary of key terms used in the Scrum software development framework. The vocabulary includes roles, events, artifacts, and principles."@en ;
+    rdfs:label "Scrum Glossary"@en ;
+    rdfs:comment "This glossary formalizes core Scrum concepts for use in semantic applications. It supports SKOS-based linking to domain ontologies and structured vocabularies."@en ;
+    dct:language "en" ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date ;
+    dct:modified "2025-07-02"^^xsd:date ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    vann:preferredNamespacePrefix "scglo" ;
+    vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/scrum-glossary#" ;
+    owl:versionIRI <https://w3id.org/schweidler/semantics/qa-kg/glossaries/domain/scrum-glossary/1.0.0#> ;
+    owl:versionInfo "0.1.0" ;
+    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, gloss:, mer:, upper:, qa: .
+
+#################################################################
+# Concept Scheme
+#################################################################
+
+scglo:ScrumConceptScheme a skos:ConceptScheme ;
+    skos:prefLabel "Scrum Terminology Concept Scheme"@en ;
+    dct:description "Glossary of key Scrum terms used in the software quality assurance knowledge graph."@en ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:issued "2025-07-03"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+#################################################################
+# Scrum Concepts
+#################################################################
+
+scglo:ScrumProcessConcept 
+    a skos:Concept ;
+    skos:prefLabel "Scrum Process"@en ;
+    skos:definition "A structured, iterative process based on Scrum principles, encompassing sprints, roles, and events to guide software development."@en ;
+    skos:scopeNote "Use this term to describe the complete execution cycle of Scrum practices."@en ;
+    skos:inScheme scglo:ScrumConceptScheme ;
+    skos:exactMatch scvoc:ScrumProcess ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date .
+
+scglo:SprintConcept 
+    a skos:Concept ;
+    skos:prefLabel "Sprint"@en ;
+    skos:definition "A time-boxed iteration during which a usable and potentially releasable product increment is created."@en ;
+    skos:scopeNote "Each Sprint should have defined goals, assigned roles, and end with a potentially shippable product increment."@en ;
+    skos:inScheme scglo:ScrumConceptScheme ;
+    skos:exactMatch scvoc:Sprint ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date .
+
+scglo:ScrumEventConcept 
+    a skos:Concept ;
+    skos:prefLabel "Scrum Event"@en ;
+    skos:definition "An event in the Scrum framework designed to provide structure and enable transparency and inspection."@en ;
+    skos:scopeNote "Includes Sprint Planning, Daily Scrum, Sprint Review, and Sprint Retrospective."@en ;
+    skos:inScheme scglo:ScrumConceptScheme ;
+    skos:exactMatch scvoc:ScrumEvent ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date .
+    
+
+scglo:ScrumRoleConcept 
+    a skos:Concept ;
+    skos:prefLabel "Scrum Role"@en ;
+    skos:definition "A defined role within the Scrum process with specific responsibilities and authority."@en ;
+    skos:scopeNote "Scrum Master, Product Owner, Developer, and Tester are all roles defined in Scrum."@en ;
+    skos:inScheme scglo:ScrumConceptScheme ;
+    skos:exactMatch scvoc:ScrumRole ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date .
+
+scglo:ScrumWorkProductConcept 
+    a skos:Concept ;
+    skos:prefLabel "Work Product"@en ;
+    skos:definition "An artifact that is created, modified, or used during a Sprint or Scrum process."@en ;
+    skos:scopeNote "Includes items like Sprint Backlog, Product Backlog, and Increments."@en ;
+    skos:inScheme scglo:ScrumConceptScheme ;
+    skos:exactMatch scvoc:WorkProduct ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date .
+
+scglo:ScrumTeamConcept 
+    a skos:Concept ;
+    skos:prefLabel "Scrum Team"@en ;
+    skos:definition "A cross-functional group of individuals responsible for delivering value in a Scrum environment. Includes a Product Owner, Scrum Master, and Developers."@en ;
+    skos:scopeNote "Use this concept to refer to the collective unit in Scrum responsible for delivering product increments. It includes all three roles: Product Owner, Scrum Master, and Developers. This term should not be used to refer to only one role or individuals outside the Scrum framework."@en ;
+    skos:inScheme scglo:ScrumConceptScheme ;
+    skos:exactMatch scvoc:ScrumTeam ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date .
+
+#################################################################
+# Scrum Role Concepts
+#################################################################
+
+scglo:ProductOwnerConcept 
+    a skos:Concept ;
+    skos:prefLabel "Product Owner"@en ;
+    skos:definition "The Scrum Role responsible for maximizing the value of the product resulting from the work of the Scrum Team."@en ;
+    skos:scopeNote "Owns and manages the Product Backlog, prioritizes work, and communicates product vision."@en ;
+    skos:inScheme scglo:ScrumConceptScheme ;
+    skos:broader scglo:ScrumRoleConcept ;
+    skos:exactMatch scvoc:ProductOwner ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date .
+
+scglo:ScrumMasterConcept 
+    a skos:Concept ;
+    skos:prefLabel "Scrum Master"@en ;
+    skos:definition "The Scrum Role that facilitates Scrum processes and removes impediments to the team's progress."@en ;
+    skos:scopeNote "Acts as a coach for the team and the organization on Scrum practices."@en ;
+    skos:inScheme scglo:ScrumConceptScheme ;
+    skos:broader scglo:ScrumRoleConcept ;
+    skos:exactMatch scvoc:ScrumMaster ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date .
+
+scglo:DeveloperConcept 
+    a skos:Concept ;
+    skos:prefLabel "Developer"@en ;
+    skos:definition "A Scrum Role accountable for delivering a usable Increment of product at the end of each Sprint."@en ;
+    skos:scopeNote "Includes all disciplines needed to build the product increment, such as programming, testing, UX, etc."@en ;
+    skos:inScheme scglo:ScrumConceptScheme ;
+    skos:broader scglo:ScrumRoleConcept ;
+    skos:exactMatch scvoc:Developer ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date .
+
+scglo:TesterConcept 
+    a skos:Concept ;
+    skos:prefLabel "Tester"@en ;
+    skos:definition "A Developer specializing in validating product quality through testing."@en ;
+    skos:scopeNote "Focuses on functional and non-functional verification and validation."@en ;
+    skos:inScheme scglo:ScrumConceptScheme ;
+    skos:broader scglo:DeveloperConcept ;
+    skos:exactMatch scvoc:Tester ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date .    
+
+#################################################################
+# Scrum Event Concepts
+#################################################################
+scglo:DailyScrumConcept 
+    a skos:Concept ;
+    skos:prefLabel "Daily Scrum"@en ;
+    skos:definition "A short, daily meeting in Scrum where the Development Team synchronizes activities and creates a plan for the next 24 hours."@en ;
+    skos:scopeNote "Also known as the 'Daily Standup'; typically limited to 15 minutes."@en ;
+    skos:inScheme scglo:ScrumConceptScheme ;
+    skos:broader scglo:ScrumEventConcept ;
+    skos:exactMatch scvoc:DailyScrum ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date .
+    
+
+scglo:PlanningMeetingConcept 
+    a skos:Concept ;
+    skos:prefLabel "Sprint Planning Meeting"@en ;
+    skos:definition "A Scrum Event where the Scrum Team plans the work to be performed during the Sprint."@en ;
+    skos:scopeNote "The Product Owner presents the ordered Product Backlog, and the team forecasts the work it will deliver."@en ;
+    skos:inScheme scglo:ScrumConceptScheme ;
+    skos:broader scglo:ScrumEventConcept ;
+    skos:exactMatch scvoc:PlanningMeeting ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date .
+    
+
+scglo:ReviewMeetingConcept 
+    a skos:Concept ;
+    skos:prefLabel "Sprint Review Meeting"@en ;
+    skos:definition "A Scrum Event at the end of the Sprint to inspect the Increment and adapt the Product Backlog if needed."@en ;
+    skos:scopeNote "The team demonstrates what was done and discusses what to do next."@en ;
+    skos:inScheme scglo:ScrumConceptScheme ;
+    skos:broader scglo:ScrumEventConcept ;
+    skos:exactMatch scvoc:ReviewMeeting ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date .
+
+scglo:RetrospectiveConcept 
+    a skos:Concept ;
+    skos:prefLabel "Sprint Retrospective"@en ;
+    skos:definition "A Scrum Event to reflect on the Sprint and identify process improvements."@en ;
+    skos:scopeNote "Held after the Sprint Review and before the next Sprint Planning."@en ;
+    skos:inScheme scglo:ScrumConceptScheme ;
+    skos:broader scglo:ScrumEventConcept ;
+    skos:exactMatch scvoc:Retrospective ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date .
+    
+
+#################################################################
+# Work Product Concepts
+#################################################################
+scglo:ProductBacklogConcept 
+    a skos:Concept ;
+    skos:prefLabel "Product Backlog"@en ;
+    skos:definition "An ordered list of everything that might be needed in the product, serving as the single source of work for the Scrum Team."@en ;
+    skos:scopeNote "Use this concept to represent the ordered list of all features, enhancements, bug fixes, and technical work that might be included in a product. It is maintained by the Product Owner and evolves as the product and environment evolve."@en ;
+    skos:inScheme scglo:ScrumConceptScheme ;
+    skos:broader scglo:ScrumWorkProductConcept ;
+    skos:exactMatch scvoc:ProductBacklog ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date .
+
+scglo:SprintBacklogConcept 
+    a skos:Concept ;
+    skos:prefLabel "Sprint Backlog"@en ;
+    skos:definition "A set of Product Backlog items selected for the Sprint, along with a plan for delivering the product Increment and achieving the Sprint Goal."@en ;
+    skos:scopeNote "Use this concept to describe the subset of Product Backlog items selected for a specific Sprint, along with a plan for delivering them and achieving the Sprint Goal. It is owned and maintained by the Developers."@en ;
+    skos:inScheme scglo:ScrumConceptScheme ;
+    skos:broader scglo:ScrumWorkProductConcept ;
+    skos:exactMatch scvoc:SprintBacklog ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date .
+
+scglo:IncrementConcept 
+    a skos:Concept ;
+    skos:prefLabel "Increment"@en ;
+    skos:definition "The sum of all the Product Backlog items completed during a Sprint and the value of the increments of all previous Sprints; it must be usable and meet the Definition of Done."@en ;
+    skos:scopeNote "Use this concept to denote the sum of all completed Product Backlog items during a Sprint and the value delivered in previous Sprints. Each Increment must be usable and meet the team's Definition of Done."@en ;
+    skos:inScheme scglo:ScrumConceptScheme ;
+    skos:broader scglo:ScrumWorkProductConcept ;
+    skos:exactMatch scvoc:Increment ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-02"^^xsd:date .
