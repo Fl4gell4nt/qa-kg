@@ -49,8 +49,8 @@ rsont:ReneSchweidler
     porg:firstName "René" ;
     porg:middleName "Erwin" ;
     porg:lastName "Schweidler" ;
-    porg:hasEmail "rene.schweidler@gmail.com" ;
-    porg:hasExpertise   "Mechatronics/Robotics", 
+    vcard:hasEmail "rene.schweidler@gmail.com" ;
+    schema:knowsAbout   "Mechatronics/Robotics", 
                         "Software Development", 
                         "Software Testing", 
                         "DevOps", 
