@@ -21,7 +21,7 @@
 #################################################################
 <https://w3id.org/schweidler/semantics/qa-kg/core-glossary>
     a owl:Ontology ;
-    dct:title "Software Qualtiy Assurrance Domain Core Glossary" ;
+    dct:title "Software Quality Assurance Domain Core Glossary" ;
     rdfs:label "Software Quality Assurance Glossary for RSPKMS" ;
     dct:description "SKOS-based glossary of QA, software testing, and agile terms used throughout the RSPKMS." ;
     dct:language "en" ;
