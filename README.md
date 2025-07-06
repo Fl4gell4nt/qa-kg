@@ -16,13 +16,15 @@ To capture, interlink, and query domain-specific knowledge using a modular, exte
 
 | File                              | Description |
 |-----------------------------------|-------------|
-| `rdf/1_upper.ttl`             | Upper ontology for high-level concepts |
-| `rdf/2_glossary.ttl`          | SKOS glossary of QA-related terms |
-| `rdf/3_meronymy.ttl`          | Meronymy Ontology |
-| `rdf/4_qa-taxonomy.ttl`       | Subsumption hierarchy for QA types, activities |
-| `rdf/5_scrum.ttl`             | Scrum-based software development modeling |
-| `rdf/6_org-people.ttl`        | People, roles, teams, and org units |
-| `rdf/7_artifacts.ttl`         | Knowledge artifact ontology (notes, test plans, checklists, ...) |
+| `rdf/core/upper-ontology.ttl`                 | Upper ontology for high-level concepts |
+| `rdf/glossaries/core/core-glossary.ttl`       | SKOS glossary of QA-related terms |
+| `rdf/glossaries/domain/test-glossary.ttl`     | Test domain terminology |
+| `rdf/glossaries/domain/scrum-glossary.ttl`    | Scrum domain terminology |
+| `rdf/vocabularies/meronymy-vocabulary.ttl`    | Meronymy Ontology |
+| `rdf/taxonomies/qa-taxonomy.ttl`              | Subsumption hierarchy for QA types, activities |
+| `rdf/vocabularies/scrum-vocabulary.ttl`       | Scrum-based software development modeling |
+| `rdf/vocabularies/org-people-vocabulary.ttl`  | People, roles, teams, and org units |
+| `rdf/vocabularies/artifacts-vocabulary.ttl`   | Knowledge artifact ontology (notes, test plans, checklists, ...) |
 
 ## 🏷️ Base IRI
 
