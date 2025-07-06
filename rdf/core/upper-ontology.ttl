@@ -39,14 +39,14 @@ upper:Agent
 
 upper:Person
     a owl:Class ;
-    rdfs:subClassOf :Agent ;
+    rdfs:subClassOf upper:Agent ;
     rdfs:subClassOf foaf:Person ;
     rdfs:label "Person"@en ;
     rdfs:comment "A human being."@en .
 
 upper:Organization
     a owl:Class ;
-    rdfs:subClassOf :Agent ;
+    rdfs:subClassOf upper:Agent ;
     rdfs:subClassOf org:Organization ;
     rdfs:label "Organization"@en ;
     rdfs:comment "An organized group of people, such as a company or department."@en .
@@ -63,7 +63,7 @@ upper:Activity
 
 upper:Event
     a owl:Class ;
-    rdfs:subClassOf :Activity ;
+    rdfs:subClassOf upper:Activity ;
     rdfs:label "Event"@en ;
     rdfs:comment "An occurrence or happening at a point or interval in time."@en .
 
@@ -79,29 +79,29 @@ upper:Artifact
 upper:hasRole
     a owl:ObjectProperty ;
     rdfs:label "has role"@en ;
-    rdfs:domain :Agent ;
-    rdfs:range :Role ;
+    rdfs:domain upper:Agent ;
+    rdfs:range upper:Role ;
     rdfs:comment "Associates an agent with a role they fulfill."@en .
 
 upper:participatesIn
     a owl:ObjectProperty ;
     rdfs:label "participates in"@en ;
-    rdfs:domain :Agent ;
-    rdfs:range :Activity ;
+    rdfs:domain upper:Agent ;
+    rdfs:range upper:Activity ;
     rdfs:comment "Indicates participation of an agent in an activity."@en .
 
 upper:produces
     a owl:ObjectProperty ;
     rdfs:label "produces"@en ;
-    rdfs:domain :Activity ;
-    rdfs:range :Artifact ;
+    rdfs:domain upper:Activity ;
+    rdfs:range upper:Artifact ;
     rdfs:comment "Indicates that an activity results in the creation or modification of an artifact."@en .
 
 upper:hasParticipant
     a owl:ObjectProperty ;
     rdfs:label "has participant"@en ;
-    rdfs:domain :Activity ;
-    rdfs:range :Agent ;
+    rdfs:domain upper:Activity ;
+    rdfs:range upper:Agent ;
     rdfs:comment "Indicates agents involved in an activity."@en .
 
 upper:relatedTo
@@ -117,13 +117,13 @@ upper:startTime
     a owl:DatatypeProperty ;
     rdfs:label "start time"@en ;
     rdfs:comment "Timestamp indicating when an event starts."@en ;
-    rdfs:domain :Event ;
+    rdfs:domain upper:Event ;
     rdfs:range xsd:dateTime .
 
 upper:endTime
     a owl:DatatypeProperty ;
     rdfs:label "end time"@en ;
     rdfs:comment "Timestamp indicating when an event ends."@en ;
-    rdfs:domain :Event ;
+    rdfs:domain upper:Event ;
     rdfs:range xsd:dateTime .
     

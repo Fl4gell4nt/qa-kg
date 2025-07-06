@@ -185,6 +185,13 @@ porg:lastName a owl:DatatypeProperty ;
     rdfs:domain porg:Person ;
     rdfs:range xsd:string .
 
+porg:hasExpertise a owl:DatatypeProperty ;
+    rdfs:label "has expertise" ;
+    rdfs:comment "Associates a person with a specific area of expertise or domain-specific skill."@en ;
+    skos:scopeNote "Used to annotate a person with one or more areas of subject matter knowledge, such as 'machine learning', 'cybersecurity', or 'semantic web'. This property is intended for lightweight tagging and not for linking to formal ontologies of competencies."@en ;
+    rdfs:domain porg:Person ;
+    rdfs:range xsd:string .
+
 porg:interactionDate a owl:DatatypeProperty ;
     rdfs:label "interaction date" ;
     rdfs:comment "The date and time when a specific interaction between individuals or systems took place."@en ;

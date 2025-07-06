@@ -7,10 +7,11 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix gloss: <https://w3id.org/schweidler/semantics/qa-kg/glossary#> .
+@prefix coglo: <https://w3id.org/schweidler/semantics/qa-kg/core-glossary#> .
 @prefix mer: <https://w3id.org/schweidler/semantics/qa-kg/meronymy#> .
 @prefix upper: <https://w3id.org/schweidler/semantics/qa-kg/upper#> .
 @prefix qa: <https://w3id.org/schweidler/semantics/qa-kg#> .
+@prefix scvoc: <https://w3id.org/schweidler/semantics/qa-kg/scrum-vocabulary#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 
 #################################################################
@@ -31,210 +32,210 @@
     vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/scrum-vocabulary#" ;
     owl:versionIRI <https://w3id.org/schweidler/semantics/qa-kg/scrum-vocabulary/0.1.0/> ;
     owl:versionInfo "0.1.0" ;
-    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, gloss:, mer:, upper:, qa:, vann: .
+    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, coglo:, mer:, upper:, qa:, vann: .
 
 #################################################################
 # Core Classes
 #################################################################
-:ScrumProcess a owl:Class ;
+scvoc:ScrumProcess a owl:Class ;
     rdfs:label "Scrum Process"@en ;
     rdfs:comment "A structured, iterative process based on Scrum principles, encompassing sprints, roles, and events to guide software development."@en ;
-    rdfs:isDefinedBy gloss:ScrumProcessConcept ;
+    rdfs:isDefinedBy coglo:ScrumProcessConcept ;
     rdfs:subClassOf upper:Activity ;
-    skos:exactMatch gloss:ScrumProcessConcept ;
+    skos:exactMatch coglo:ScrumProcessConcept ;
     skos:scopeNote "Use this class to represent the overall execution of Scrum, often tied to a project or product delivery lifecycle."@en .
 
-:Sprint a owl:Class ;
+scvoc:Sprint a owl:Class ;
     rdfs:label "Sprint"@en ;
     rdfs:comment "A time-boxed iteration during which a usable and potentially releasable product increment is created."@en ;
-    rdfs:isDefinedBy gloss:SprintConcept ;
+    rdfs:isDefinedBy coglo:SprintConcept ;
     rdfs:subClassOf upper:Activity ;
-    skos:exactMatch gloss:SprintConcept ;
+    skos:exactMatch coglo:SprintConcept ;
     skos:scopeNote "Each Sprint should have defined goals, assigned roles, planned work items, and end with a potentially shippable Increment."@en .
 
-:WorkProduct a owl:Class ;
+scvoc:WorkProduct a owl:Class ;
     rdfs:label "Work Product"@en ;
     rdfs:comment "An artifact that is created, modified, or used during a Sprint or Scrum process."@en ;
-    rdfs:isDefinedBy gloss:WorkProductConcept ;
+    rdfs:isDefinedBy coglo:WorkProductConcept ;
     rdfs:subClassOf upper:Artifact ;
-    skos:exactMatch gloss:WorkProductConcept ;
+    skos:exactMatch coglo:WorkProductConcept ;
     skos:scopeNote "Work products include Sprint Backlog, Product Backlog, Increments, and any documentation or test results."@en .
 
-:ScrumEvent a owl:Class ;
+scvoc:ScrumEvent a owl:Class ;
     rdfs:label "Scrum Event"@en ;
     rdfs:comment "An event in the Scrum framework designed to provide structure and enable transparency and inspection."@en ;
-    rdfs:isDefinedBy gloss:ScrumEventConcept ;
+    rdfs:isDefinedBy coglo:ScrumEventConcept ;
     rdfs:subClassOf upper:Event ;
-    skos:exactMatch gloss:ScrumEventConcept ;
+    skos:exactMatch coglo:ScrumEventConcept ;
     skos:scopeNote "Includes events like Sprint Planning, Daily Scrum, Sprint Review, and Sprint Retrospective."@en .
 
-:ScrumRole a owl:Class ;
+scvoc:ScrumRole a owl:Class ;
     rdfs:label "Scrum Role"@en ;
     rdfs:comment "A defined role within the Scrum process with specific responsibilities and authority."@en ;
-    rdfs:isDefinedBy gloss:ScrumRoleConcept ;
+    rdfs:isDefinedBy coglo:ScrumRoleConcept ;
     rdfs:subClassOf upper:Role ;
-    skos:exactMatch gloss:ScrumRoleConcept ;
+    skos:exactMatch coglo:ScrumRoleConcept ;
     skos:scopeNote "Includes roles like Scrum Master, Product Owner, Developer, and Tester as they relate to Scrum."@en .
 
-:ScrumTeam a rdfs:Class ;
+scvoc:ScrumTeam a rdfs:Class ;
     rdfs:label "Scrum Team"@en ;
     rdfs:comment "The fundamental unit of Scrum, consisting of a Product Owner, Scrum Master, and Developers, who collaboratively deliver valuable increments."@en ;
-    rdfs:isDefinedBy gloss:ScrumTeamConcept ;
+    rdfs:isDefinedBy coglo:ScrumTeamConcept ;
     rdfs:subClassOf upper:Organization ;
-    skos:exactMatch gloss:ScrumTeamConcept ;
+    skos:exactMatch coglo:ScrumTeamConcept ;
     skos:scopeNote "Use this concept to refer to the collective unit in Scrum responsible for delivering product increments. It includes all three roles: Product Owner, Scrum Master, and Developers. This term should not be used to refer to only one role or individuals outside the Scrum framework."@en .
 
 #################################################################
 # Role Types
 #################################################################
-:ProductOwner a rdfs:Class ;
+scvoc:ProductOwner a rdfs:Class ;
     rdfs:label "Product Owner"@en ;
     rdfs:comment "The Scrum Role responsible for maximizing product value."@en ;
-    rdfs:isDefinedBy gloss:ProductOwnerConcept ;
-    rdfs:subClassOf :ScrumRole ;
-    skos:exactMatch gloss:ProductOwnerConcept .
+    rdfs:isDefinedBy coglo:ProductOwnerConcept ;
+    rdfs:subClassOf scvoc:ScrumRole ;
+    skos:exactMatch coglo:ProductOwnerConcept .
 
-:ScrumMaster a rdfs:Class ;
+scvoc:ScrumMaster a rdfs:Class ;
     rdfs:label "Scrum Master"@en ;
     rdfs:comment "The Scrum Role facilitating Scrum processes and removing impediments."@en ;
-    rdfs:isDefinedBy gloss:ScrumMasterConcept ;
-    rdfs:subClassOf :ScrumRole ;
-    skos:exactMatch gloss:ScrumMasterConcept .
+    rdfs:isDefinedBy coglo:ScrumMasterConcept ;
+    rdfs:subClassOf scvoc:ScrumRole ;
+    skos:exactMatch coglo:ScrumMasterConcept .
 
-:Developer a rdfs:Class ;
+scvoc:Developer a rdfs:Class ;
     rdfs:label "Developer"@en ;
     rdfs:comment "A Scrum Role responsible for delivering a potentially releasable increment each Sprint."@en ;
-    rdfs:isDefinedBy gloss:DeveloperConcept ;
-    rdfs:subClassOf :ScrumRole ;
-    skos:exactMatch gloss:DeveloperConcept .
+    rdfs:isDefinedBy coglo:DeveloperConcept ;
+    rdfs:subClassOf scvoc:ScrumRole ;
+    skos:exactMatch coglo:DeveloperConcept .
 
-:Tester a rdfs:Class ;
+scvoc:Tester a rdfs:Class ;
     rdfs:label "Tester"@en ;
     rdfs:comment "A specific kind of Developer focusing on software testing responsibilities."@en ;
-    rdfs:isDefinedBy gloss:TesterConcept ;
-    rdfs:subClassOf :Developer ;
-    skos:exactMatch gloss:TesterConcept .
+    rdfs:isDefinedBy coglo:TesterConcept ;
+    rdfs:subClassOf scvoc:Developer ;
+    skos:exactMatch coglo:TesterConcept .
 
 #################################################################
 # Event Types
 #################################################################
-:DailyScrum a rdfs:Class ;
+scvoc:DailyScrum a rdfs:Class ;
     rdfs:label "Daily Scrum"@en ;
     rdfs:comment "A short, time-boxed Scrum event held each working day where the Scrum Team inspects progress toward the Sprint Goal and adapts the Sprint Backlog as necessary."@en ;
-    rdfs:isDefinedBy gloss:DailyScrumConcept ;
-    rdfs:subClassOf :ScrumEvent ;
-    skos:exactMatch gloss:DailyScrumConcept .
+    rdfs:isDefinedBy coglo:DailyScrumConcept ;
+    rdfs:subClassOf scvoc:ScrumEvent ;
+    skos:exactMatch coglo:DailyScrumConcept .
 
-:PlanningMeeting a rdfs:Class ;
+scvoc:PlanningMeeting a rdfs:Class ;
     rdfs:label "Planning Meeting"@en ;
     rdfs:comment "A Scrum Event where the team plans the scope and goals of the upcoming Sprint."@en ;
-    rdfs:isDefinedBy gloss:PlanningMeetingConcept ;
-    rdfs:subClassOf :ScrumEvent ;
-    skos:exactMatch gloss:PlanningMeetingConcept .
+    rdfs:isDefinedBy coglo:PlanningMeetingConcept ;
+    rdfs:subClassOf scvoc:ScrumEvent ;
+    skos:exactMatch coglo:PlanningMeetingConcept .
 
-:ReviewMeeting a rdfs:Class ;
+scvoc:ReviewMeeting a rdfs:Class ;
     rdfs:label "Review Meeting"@en ;
     rdfs:comment "A Scrum Event to inspect the Increment and adapt the Product Backlog."@en ;
-    rdfs:isDefinedBy gloss:ReviewMeetingConcept ;
-    rdfs:subClassOf :ScrumEvent ;
-    skos:exactMatch gloss:ReviewMeetingConcept .
+    rdfs:isDefinedBy coglo:ReviewMeetingConcept ;
+    rdfs:subClassOf scvoc:ScrumEvent ;
+    skos:exactMatch coglo:ReviewMeetingConcept .
 
-:Retrospective a rdfs:Class ;
+scvoc:Retrospective a rdfs:Class ;
     rdfs:label "Retrospective"@en ;
     rdfs:comment "A Scrum Event held after the Sprint to reflect on process improvements."@en ;
-    rdfs:isDefinedBy gloss:RetrospectiveConcept ;
-    rdfs:subClassOf :ScrumEvent ;
-    skos:exactMatch gloss:RetrospectiveConcept .
+    rdfs:isDefinedBy coglo:RetrospectiveConcept ;
+    rdfs:subClassOf scvoc:ScrumEvent ;
+    skos:exactMatch coglo:RetrospectiveConcept .
 
 #################################################################
 # Work Products
 ##################################################################
-:Increment a rdfs:Class ;
+scvoc:Increment a rdfs:Class ;
     rdfs:label "Increment"@en ;
     rdfs:comment "The usable, potentially shippable product output created during a Sprint."@en ;
-    rdfs:isDefinedBy gloss:IncrementConcept ;
-    rdfs:subClassOf :WorkProduct ;
-    skos:exactMatch gloss:IncrementConcept .
+    rdfs:isDefinedBy coglo:IncrementConcept ;
+    rdfs:subClassOf scvoc:WorkProduct ;
+    skos:exactMatch coglo:IncrementConcept .
 
-:ProductBacklog a rdfs:Class ;
-    rdfs:isDefinedBy gloss:ProductBacklogConcept ;
-    rdfs:subClassOf :WorkProduct ;
-    skos:exactMatch gloss:ProductBacklogConcept .
+scvoc:ProductBacklog a rdfs:Class ;
+    rdfs:isDefinedBy coglo:ProductBacklogConcept ;
+    rdfs:subClassOf scvoc:WorkProduct ;
+    skos:exactMatch coglo:ProductBacklogConcept .
 
-:SprintBacklog a rdfs:Class ;
+scvoc:SprintBacklog a rdfs:Class ;
     rdfs:label "Sprint Backlog"@en ;
     rdfs:comment "A list of tasks and items the Scrum team commits to during the Sprint."@en ;
-    rdfs:isDefinedBy gloss:SprintBacklogConcept ;
-    rdfs:subClassOf :WorkProduct ;
-    skos:exactMatch gloss:SprintBacklogConcept .
+    rdfs:isDefinedBy coglo:SprintBacklogConcept ;
+    rdfs:subClassOf scvoc:WorkProduct ;
+    skos:exactMatch coglo:SprintBacklogConcept .
 
 #################################################################
 # ObjectProperties
 #################################################################
-:hasEvent a owl:ObjectProperty ;
+scvoc:hasEvent a owl:ObjectProperty ;
     rdfs:label "has Event"@en ;
     rdfs:comment "Associates a Sprint with one or more Scrum Events."@en ;
-    rdfs:domain :Sprint ;
-    rdfs:range :ScrumEvent ;
+    rdfs:domain scvoc:Sprint ;
+    rdfs:range scvoc:ScrumEvent ;
     rdfs:subPropertyOf mer:hasPhase .
 
-:hasRole a owl:ObjectProperty ;
+scvoc:hasRole a owl:ObjectProperty ;
     rdfs:label "has Role"@en ;
     rdfs:comment "Indicates the Scrum Roles associated with a Sprint."@en ;
-    rdfs:domain :Sprint ;
-    rdfs:range :ScrumRole ;
+    rdfs:domain scvoc:Sprint ;
+    rdfs:range scvoc:ScrumRole ;
     rdfs:subPropertyOf mer:hasComponent .
 
-:isFacilitatedBy a owl:ObjectProperty ;
+scvoc:isFacilitatedBy a owl:ObjectProperty ;
     rdfs:label "is Facilitated By"@en ;
     rdfs:comment "Links a Scrum Event to the Scrum Master responsible for facilitation."@en ;
-    rdfs:domain :ScrumEvent ;
-    rdfs:range :ScrumMaster .
+    rdfs:domain scvoc:ScrumEvent ;
+    rdfs:range scvoc:ScrumMaster .
 
-:isResponsibleFor a owl:ObjectProperty ;
+scvoc:isResponsibleFor a owl:ObjectProperty ;
     rdfs:label "is Responsible For"@en ;
     rdfs:comment "Indicates a role’s responsibility for a Scrum artifact or activity."@en ;
-    rdfs:domain :ScrumRole ;
-    rdfs:range :WorkProduct .
+    rdfs:domain scvoc:ScrumRole ;
+    rdfs:range scvoc:WorkProduct .
 
-:coaches a owl:ObjectProperty ;
+scvoc:coaches a owl:ObjectProperty ;
     rdfs:label "coaches"@en ;
     rdfs:comment "Indicates that an individual provides guidance and facilitation to a team."@en ;
-    rdfs:domain :ScrumRole ;
-    rdfs:range :ScrumTeam .
+    rdfs:domain scvoc:ScrumRole ;
+    rdfs:range scvoc:ScrumTeam .
 
-:develops a owl:ObjectProperty ;
+scvoc:develops a owl:ObjectProperty ;
     rdfs:label "develops"@en ;
     rdfs:comment "Indicates that a person or role implements a software function."@en ;
-    rdfs:domain :Developer ;
-    rdfs:range :SoftwareFunction .
+    rdfs:domain scvoc:Developer ;
+    rdfs:range scvoc:SoftwareFunction .
 
-:produces a owl:ObjectProperty ;
+scvoc:produces a owl:ObjectProperty ;
     rdfs:label "produces"@en ;
     rdfs:comment "Denotes the artifact produced during the Sprint or Scrum Event."@en ;
     rdfs:domain [ a owl:Class ;
-            owl:unionOf ( :Sprint :ScrumEvent ) ] ;
-    rdfs:range :WorkProduct .
+            owl:unionOf ( scvoc:Sprint scvoc:ScrumEvent ) ] ;
+    rdfs:range scvoc:WorkProduct .
 
-:manages a owl:ObjectProperty ;
+scvoc:manages a owl:ObjectProperty ;
     rdfs:label "manages"@en ;
     rdfs:comment "Indicates that an agent is responsible for managing a resource, such as a backlog or sprint."@en ;
-    rdfs:domain :ScrumRole ;
-    rdfs:range [ owl:unionOf ( :ProductBacklog :Sprint ) ] .
+    rdfs:domain scvoc:ScrumRole ;
+    rdfs:range [ owl:unionOf ( scvoc:ProductBacklog scvoc:Sprint ) ] .
 
-:owns a owl:ObjectProperty ;
+scvoc:owns a owl:ObjectProperty ;
     rdfs:label "owns"@en ;
     rdfs:comment "Indicates ownership or stewardship of a resource or artifact."@en ;
-    rdfs:domain :ScrumRole ;
-    rdfs:range :WorkProduct .
+    rdfs:domain scvoc:ScrumRole ;
+    rdfs:range scvoc:WorkProduct .
 
-:fulfills a owl:ObjectProperty ;
+scvoc:fulfills a owl:ObjectProperty ;
     rdfs:label "fulfills"@en ;
     rdfs:comment "Indicates that a requirement is satisfied or implemented by a software function."@en ;
-    rdfs:domain :SoftwareFunction ;
-    rdfs:range :Requirement .
+    rdfs:domain scvoc:SoftwareFunction ;
+    rdfs:range scvoc:Requirement .
 
-:tests a owl:ObjectProperty ;
+scvoc:tests a owl:ObjectProperty ;
     rdfs:label "tests"@en ;
     rdfs:comment "Indicates that a person or role tests a specific software function."@en ;
     rdfs:domain :Tester ;
@@ -243,35 +244,35 @@
 :updates a owl:ObjectProperty ;
     rdfs:label "updates"@en ;
     rdfs:comment "Indicates that a Scrum event leads to changes or refinements in a backlog."@en ;
-    rdfs:domain :ScrumEvent ;
-    rdfs:range :WorkProduct .
+    rdfs:domain scvoc:ScrumEvent ;
+    rdfs:range scvoc:WorkProduct .
 
 
 #################################################################
 # DatatypeProperties
 #################################################################
-:hasDuration a owl:DatatypeProperty ;
+scvoc:hasDuration a owl:DatatypeProperty ;
     rdfs:label "has Duration"@en ;
     rdfs:comment "Duration of the Sprint in days."@en ;
-    rdfs:domain :Sprint ;
+    rdfs:domain scvoc:Sprint ;
     rdfs:range xsd:duration .
 
-:hasEndDate a owl:DatatypeProperty ;
+scvoc:hasEndDate a owl:DatatypeProperty ;
     rdfs:label "has End Date"@en ;
     rdfs:comment "End date of the Sprint."@en ;
-    rdfs:domain :Sprint ;
+    rdfs:domain scvoc:Sprint ;
     rdfs:range xsd:date .
     
-:hasStartDate a owl:DatatypeProperty ;
+scvoc:hasStartDate a owl:DatatypeProperty ;
     rdfs:label "has Start Date"@en ;
     rdfs:comment "Start date of the Sprint."@en ;
-    rdfs:domain :Sprint ;
+    rdfs:domain scvoc:Sprint ;
     rdfs:range xsd:date .
 
 #################################################################
 # Inverse ObjectProperties
 #################################################################
-:facilitates owl:inverseOf :isFacilitatedBy .
+scvoc:facilitates owl:inverseOf scvoc:isFacilitatedBy .
 
 
 

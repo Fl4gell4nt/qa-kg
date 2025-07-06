@@ -46,8 +46,9 @@ rsont:ReneSchweidler
     a porg:Person ;
     rdfs:label "René Schweidler"@en ;
     rdfs:comment "René Schweidler a knowledge engineer, softwaredeveloper, DevOps and software testing specialist from Vienna."@en ;
-    porg:hasFirstName "René" ;
-    porg:hasLastName "Schweidler" ;
+    porg:firstName "René" ;
+    porg:middleName "Erwin" ;
+    porg:lastName "Schweidler" ;
     porg:hasEmail "rene.schweidler@gmail.com" ;
     porg:hasExpertise   "Mechatronics/Robotics", 
                         "Software Development", 

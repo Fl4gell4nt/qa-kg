@@ -1,63 +1,63 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix dc:  <http://purl.org/dc/terms/> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix time: <http://www.w3.org/2006/time#> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rsont: <https://w3id.org/schweidler/semantics/qa-kg/data/ReneSchweidler#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix coglo: <https://w3id.org/schweidler/semantics/qa-kg/core-glossary#> .
+@prefix mevoc: <https://w3id.org/schweidler/semantics/qa-kg/meronymy-vocabulary#> .
 @prefix upper: <https://w3id.org/schweidler/semantics/qa-kg/upper#> .
-@prefix mer: <https://w3id.org/schweidler/semantics/qa-kg/meronymy#> .
-@prefix gloss: <https://w3id.org/schweidler/semantics/qa-kg/glossary#> .
-@prefix : <https://w3id.org/schweidler/semantics/qa-kg#> .
+@prefix qavoc: <https://w3id.org/schweidler/semantics/qa-kg/qa-vocabulary#> .
 
 #################################################################
 # Documentation
 #################################################################
-<https://w3id.org/schweidler/semantics/qa-kg/qa>
+<https://w3id.org/schweidler/semantics/qa-kg/qa-vocabulary>
     a owl:Ontology ;
-    dc:title "Software Quality Assurance Domain Ontology" ;
-    dc:creator "René Schweidler MSc." ;
-    dc:description "Ontology modeling entities that belong to the domain of software quality assurance and testing however are independent from scrum."@en ;
+    dct:title "Software Quality Assurance Domain Ontology" ;
     rdfs:label "Software Quality Assurance Domain Ontology" ;
-    owl:versionInfo "0.1" ;
-    owl:imports
-        <http://www.w3.org/ns/prov#> ,
-        <http://www.w3.org/2006/time#> ,
-        <http://www.w3.org/2002/07/owl#> ,
-        <http://purl.org/dc/terms/> ,
-        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ,
-        <http://www.w3.org/2000/01/rdf-schema#> ,
-        <http://www.w3.org/2001/XMLSchema#> ,
-        <https://w3id.org/schweidler/semantics/qa-kg/upper#> ,
-        <https://w3id.org/schweidler/semantics/qa-kg/meronymy#> ,
-        <https://w3id.org/schweidler/semantics/qa-kg/glossary#> ,
-        <https://w3id.org/schweidler/semantics/qa-kg#> .
+    rdfs:comment "Software Quality Assurance Domain Ontology"@en ;
+    dct:description "Ontology modeling entities that belong to the domain of software quality assurance and testing however are independent from scrum."@en ;
+    dct:language "en" ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date ;
+    dct:modified "2025-07-02"^^xsd:date ;    
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    vann:preferredNamespacePrefix "qavoc" ;
+    vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/qa-vocabulary#" ;
+    owl:versionIRI <https://w3id.org/schweidler/semantics/qa-kg/qa-vocabulary/0.1.0/> ;
+    owl:versionInfo "0.1.0" ;
+    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, coglo:, mer:, upper:, qa:, vann: .
 
 #################################################################
 # Core Classes
 #################################################################
-:SoftwareFunction a owl:Class ;
+qavoc:SoftwareFunction a owl:Class ;
     rdfs:label "Software Function"@en ;
     rdfs:comment "A distinct capability or behavior implemented by software to fulfill one or more requirements."@en ;
     skos:scopeNote "Use this concept to represent an individual, identifiable piece of software behavior or functionality, typically aligned with a requirement or user need. It is not intended to represent entire systems, subsystems, or non-functional aspects like performance or scalability."@en ;
-    skos:exactMatch gloss:SoftwareFunctionConcept ;
-    rdfs:isDefinedBy gloss:SoftwareFunctionConcept ;
+    skos:exactMatch coglo:SoftwareFunctionConcept ;
+    rdfs:isDefinedBy coglo:SoftwareFunctionConcept ;
     rdfs:subClassOf upper:Artifact .
 
-:Requirement a owl:Class ;
+qavoc:Requirement a owl:Class ;
     rdfs:label "Requirement"@en ;
     rdfs:comment "A documented condition or capability needed by a stakeholder or system to solve a problem or achieve an objective, which must be fulfilled by a software or system component."@en ;
     skos:scopeNote "Use this concept to describe stakeholder expectations or system obligations that must be satisfied. It includes both functional and non-functional requirements, but should not be confused with implementation details or technical tasks."@en ;
-    skos:exactMatch gloss:RequirementConcept ;
-    rdfs:isDefinedBy gloss:RequirementConcept ;
+    skos:exactMatch coglo:RequirementConcept ;
+    rdfs:isDefinedBy coglo:RequirementConcept ;
     rdfs:subClassOf prov:Entity .
 
-:Constraint a owl:Class ;
+qavoc:Constraint a owl:Class ;
     rdfs:label "Constraint"@en ;
     rdfs:comment "A type of requirement that imposes a restriction on the design, implementation, or operation of a system."@en ;
     skos:scopeNote "Use this concept to classify requirements that limit how a system must be built or operated. Examples include regulatory requirements, technology constraints, interoperability obligations, or resource limitations."@en ;
-    skos:exactMatch gloss:ConstraintConcept ;
-    rdfs:isDefinedBy gloss:ConstraintConcept ;
+    skos:exactMatch coglo:ConstraintConcept ;
+    rdfs:isDefinedBy coglo:ConstraintConcept ;
     rdfs:subClassOf :Requirement .
 
 #################################################################
