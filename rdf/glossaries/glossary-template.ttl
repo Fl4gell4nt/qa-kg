@@ -27,13 +27,13 @@
     vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/'NAMESPACE-IRI'#" ;
     owl:versionIRI <https://w3id.org/schweidler/semantics/qa-kg/'NAME'-glossary/0.1.0/> ;
     owl:versionInfo "0.1.0" ;
-    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, gloss:, mer:, upper:, qa: .
+    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, gloss:, mer:, upper:, qa:, vann: .
 
 #################################################################
 # Concept Scheme
 #################################################################
 
-:NAMEConceptScheme 
+ex:NAMEConceptScheme
     a skos:ConceptScheme ;
     skos:prefLabel ""@en ;
     dct:description ""@en ;
@@ -43,15 +43,15 @@
 #################################################################
 # Core Concepts
 #################################################################
-prefix:XxxXxxConcept
+ex:XxxXxxConcept
     a skos:Concept ;
     skos:prefLabel ""@en ;
     skos:definition ""@en ;
     skos:scopeNote ""@en ;
-    skos:inScheme prefix:XxxXxx ;
-    skos:broader prefix:XxxXxx ;
-    skos:narrower prefix:XxxXxx ;
-    skos:exactMatch prefix:XxxXxx ;
+    skos:inScheme ex:XxxXxx ;
+    skos:broader ex:XxxXxx ;
+    skos:narrower ex:XxxXxx ;
+    skos:exactMatch ex:XxxXxx ;
     dct:creator rsont:ReneSchweidler ;
     dct:created "2025-07-02"^^xsd:date .
     

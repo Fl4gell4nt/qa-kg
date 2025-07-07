@@ -25,7 +25,7 @@
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     vann:preferredNamespacePrefix "" ;
     vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/'NAMESPACE-IRI'#" ;
-    owl:versionIRI <https://w3id.org/schweidler/semantics/qa-kg/'NAME'-glossary/0.1.0/> ;
+    owl:versionIRI <https://w3id.org/schweidler/semantics/qa-kg/'NAME'-vocabulary/0.1.0/> ;
     owl:versionInfo "0.1.0" ;
     owl:imports <http://purl.org/dc/terms/> ,
                 <http://www.w3.org/2002/07/owl#> ,
