@@ -185,14 +185,14 @@ scvoc:hasEvent a owl:ObjectProperty ;
     rdfs:comment "Associates a Sprint with one or more Scrum Events."@en ;
     rdfs:domain scvoc:Sprint ;
     rdfs:range scvoc:ScrumEvent ;
-    rdfs:subPropertyOf mer:hasPhase .
+    rdfs:subPropertyOf mevoc:hasPhase .
 
 scvoc:hasRole a owl:ObjectProperty ;
     rdfs:label "has Role"@en ;
     rdfs:comment "Indicates the Scrum Roles associated with a Sprint."@en ;
     rdfs:domain scvoc:Sprint ;
     rdfs:range scvoc:ScrumRole ;
-    rdfs:subPropertyOf mer:hasComponent .
+    rdfs:subPropertyOf mevoc:hasComponent .
 
 scvoc:isFacilitatedBy a owl:ObjectProperty ;
     rdfs:label "is Facilitated By"@en ;
