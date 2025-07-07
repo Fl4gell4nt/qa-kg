@@ -1,17 +1,13 @@
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix rsont: <https://w3id.org/schweidler/semantics/qa-kg/data/ReneSchweidler#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix gloss: <https://w3id.org/schweidler/semantics/qa-kg/glossary#> .
-@prefix mer: <https://w3id.org/schweidler/semantics/qa-kg/meronymy#> .
-@prefix upper: <https://w3id.org/schweidler/semantics/qa-kg/upper#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix qa: <https://w3id.org/schweidler/semantics/qa-kg#> .
-@prefix : <https://w3id.org/schweidler/semantics/qa-kg/'LOCAL-NS-IRI'#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rsont: <https://w3id.org/schweidler/semantics/qa-kg/data/rene-schweidler#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+# ---- Namespace of this file ----
+@prefix ex: <https://w3id.org/schweidler/semantics/qa-kg/'LOCAL-NS-IRI'#> .
 
 #################################################################
 # Documentation
@@ -31,7 +27,14 @@
     vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/'NAMESPACE-IRI'#" ;
     owl:versionIRI <https://w3id.org/schweidler/semantics/qa-kg/'NAME'-glossary/0.1.0/> ;
     owl:versionInfo "0.1.0" ;
-    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, gloss:, mer:, upper:, qa: .
+    owl:imports <http://purl.org/dc/terms/> ,
+                <http://www.w3.org/2002/07/owl#> ,
+                <https://w3id.org/schweidler/semantics/qa-kg#> ,
+                <http://www.w3.org/2000/01/rdf-schema#> ,
+                <https://w3id.org/schweidler/semantics/qa-kg/data/rene-schweidler#> ,
+                <http://www.w3.org/2004/02/skos/core#> ,
+                <http://purl.org/vocab/vann/> ,
+                <http://www.w3.org/2001/XMLSchema#> .
 
 
 #################################################################

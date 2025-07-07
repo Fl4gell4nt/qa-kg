@@ -1,12 +1,31 @@
+@prefix coglo: <https://w3id.org/schweidler/semantics/qa-kg/core-glossary#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mevoc: <https://w3id.org/schweidler/semantics/qa-kg/meronymy-vocabulary#> .
+@prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix dc:  <http://purl.org/dc/terms/> .
-@prefix art: <https://w3id.org/schweidler/semantics/qa-kg/artifacts#> .
+@prefix porg: <https://w3id.org/schweidler/semantics/qa-kg/org-people#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qa: <https://w3id.org/schweidler/semantics/qa-kg#> .
+@prefix qavoc: <https://w3id.org/schweidler/semantics/qa-kg/qa-vocabulary#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rsont: <https://w3id.org/schweidler/semantics/qa-kg/data/rene-schweidler#> .
+@prefix scvoc: <https://w3id.org/schweidler/semantics/qa-kg/scrum-vocabulary#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix upont: <https://w3id.org/schweidler/semantics/qa-kg/upper-ontology#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix artvoc: <https://w3id.org/schweidler/semantics/qa-kg/artifacts-vocabulary#> .
 
-<https://w3id.org/schweidler/semantics/qa-kg/artifacts>
+<https://w3id.org/schweidler/semantics/qa-kg/artifacts-vocabulary>
     a owl:Ontology ;
-    dc:title "Knowledge Artifact Ontology" ;
-    dc:creator "René Schweidler MSc." ;
-    dc:description "Ontology using Dublin Core terms to describe documents, templates, checklists, reports, specs, and other work-related knowledge objects." ;
+    dct:title "Knowledge Artifact Ontology" ;
+    dct:creator "René Schweidler MSc." ;
+    dct:description "Ontology using Dublin Core terms to describe documents, templates, checklists, reports, specs, and other work-related knowledge objects." ;
     owl:versionInfo "0.1" ;
     owl:imports <http://purl.org/dc/terms/> .
 

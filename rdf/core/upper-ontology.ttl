@@ -1,35 +1,54 @@
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix rsont: <https://w3id.org/schweidler/semantics/qa-kg/data/ReneSchweidler#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix gloss: <https://w3id.org/schweidler/semantics/qa-kg/glossary#> .
-@prefix mevoc: <https://w3id.org/schweidler/semantics/qa-kg/meronymy-vocabulary#> .
-@prefix upper: <https://w3id.org/schweidler/semantics/qa-kg/upper#> .
-@prefix qavoc: <https://w3id.org/schweidler/semantics/qa-kg/qa-vocabulary#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qa: <https://w3id.org/schweidler/semantics/qa-kg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rsont: <https://w3id.org/schweidler/semantics/qa-kg/data/rene-schweidler#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix upont: <https://w3id.org/schweidler/semantics/qa-kg/upper-ontology#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 #################################################################
 # Documentation
 #################################################################
 <https://w3id.org/schweidler/semantics/qa-kg/upper>
     a owl:Ontology ;
-    dct:title "Schweidler Semantic PKMS Upper Ontology" ;
-    dct:creator "René Schweidler MSc." ;
-    dct:description "Upper ontology defining foundational classes and properties for software QA, knowledge artifacts, events, people, and roles." ;
-    dct:created "2025-07-05"^^xsd:date ;
-    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
-    rdfs:label "Upper Ontology Module for RSPKMS" ;
+    
+   
     vann:preferredNamespacePrefix "upont" ;
     vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/upper#" ;
     owl:versionInfo "0.1" ;
     owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, gloss:, foaf:, org:, mevoc:, upper:, qa:, vann: .
+
+<https://w3id.org/schweidler/semantics/qa-kg/upper-ontology>
+    a owl:Ontology ;
+    dct:title "Schweidler Semantic PKMS Upper Ontology" ;
+    rdfs:label "Upper Ontology Module for RSPKMS"@en ;
+    rdfs:comment ""@en ;
+    dct:description "Upper ontology defining foundational classes and properties for software QA, knowledge artifacts, events, people, and roles."@en ;
+    dct:language "en" ;
+    dct:creator rsont:ReneSchweidler ;
+    dct:created "2025-07-05"^^xsd:date ;
+    dct:modified "2025-07-02"^^xsd:date ;    
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    vann:preferredNamespacePrefix "upont" ;
+    vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/upper-ontology#" ;
+    owl:versionIRI <https://w3id.org/schweidler/semantics/qa-kg/upper-ontology/0.1.0/> ;
+    owl:versionInfo "0.1.0" ;
+    owl:imports <http://purl.org/dc/terms/> ,
+                <http://xmlns.com/foaf/0.1/> ,
+                <http://www.w3.org/ns/org#> ,
+                <http://www.w3.org/2002/07/owl#> ,
+                <https://w3id.org/schweidler/semantics/qa-kg#> ,
+                <http://www.w3.org/2000/01/rdf-schema#> ,
+                <https://w3id.org/schweidler/semantics/qa-kg/data/rene-schweidler#> ,
+                <http://www.w3.org/2004/02/skos/core#> ,
+                <https://w3id.org/schweidler/semantics/qa-kg/upper-ontology#> ,
+                <http://purl.org/vocab/vann/> ,
+                <http://www.w3.org/2001/XMLSchema#> .
+
 
 #################################################################
 # Core Classes
