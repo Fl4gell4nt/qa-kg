@@ -1,7 +1,9 @@
 @prefix coglo: <https://w3id.org/schweidler/semantics/qa-kg/core-glossary#> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix mevoc: <https://w3id.org/schweidler/semantics/qa-kg/meronymy-vocabulary#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix qa: <https://w3id.org/schweidler/semantics/qa-kg#> .
+@prefix qavoc: <https://w3id.org/schweidler/semantics/qa-kg/qa-vocabulary#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rsont: <https://w3id.org/schweidler/semantics/qa-kg/data/rene-schweidler#> .
 @prefix scvoc: <https://w3id.org/schweidler/semantics/qa-kg/scrum-vocabulary#> .
@@ -47,7 +49,7 @@ scvoc:ScrumProcess a owl:Class ;
     rdfs:label "Scrum Process"@en ;
     rdfs:comment "A structured, iterative process based on Scrum principles, encompassing sprints, roles, and events to guide software development."@en ;
     rdfs:isDefinedBy coglo:ScrumProcessConcept ;
-    rdfs:subClassOf upper:Activity ;
+    rdfs:subClassOf upont:Activity ;
     skos:exactMatch coglo:ScrumProcessConcept ;
     skos:scopeNote "Use this class to represent the overall execution of Scrum, often tied to a project or product delivery lifecycle."@en .
 
@@ -55,7 +57,7 @@ scvoc:Sprint a owl:Class ;
     rdfs:label "Sprint"@en ;
     rdfs:comment "A time-boxed iteration during which a usable and potentially releasable product increment is created."@en ;
     rdfs:isDefinedBy coglo:SprintConcept ;
-    rdfs:subClassOf upper:Activity ;
+    rdfs:subClassOf upont:Activity ;
     skos:exactMatch coglo:SprintConcept ;
     skos:scopeNote "Each Sprint should have defined goals, assigned roles, planned work items, and end with a potentially shippable Increment."@en .
 
@@ -63,7 +65,7 @@ scvoc:WorkProduct a owl:Class ;
     rdfs:label "Work Product"@en ;
     rdfs:comment "An artifact that is created, modified, or used during a Sprint or Scrum process."@en ;
     rdfs:isDefinedBy coglo:WorkProductConcept ;
-    rdfs:subClassOf upper:Artifact ;
+    rdfs:subClassOf upont:Artifact ;
     skos:exactMatch coglo:WorkProductConcept ;
     skos:scopeNote "Work products include Sprint Backlog, Product Backlog, Increments, and any documentation or test results."@en .
 
@@ -71,7 +73,7 @@ scvoc:ScrumEvent a owl:Class ;
     rdfs:label "Scrum Event"@en ;
     rdfs:comment "An event in the Scrum framework designed to provide structure and enable transparency and inspection."@en ;
     rdfs:isDefinedBy coglo:ScrumEventConcept ;
-    rdfs:subClassOf upper:Event ;
+    rdfs:subClassOf upont:Event ;
     skos:exactMatch coglo:ScrumEventConcept ;
     skos:scopeNote "Includes events like Sprint Planning, Daily Scrum, Sprint Review, and Sprint Retrospective."@en .
 
@@ -79,7 +81,7 @@ scvoc:ScrumRole a owl:Class ;
     rdfs:label "Scrum Role"@en ;
     rdfs:comment "A defined role within the Scrum process with specific responsibilities and authority."@en ;
     rdfs:isDefinedBy coglo:ScrumRoleConcept ;
-    rdfs:subClassOf upper:Role ;
+    rdfs:subClassOf upont:Role ;
     skos:exactMatch coglo:ScrumRoleConcept ;
     skos:scopeNote "Includes roles like Scrum Master, Product Owner, Developer, and Tester as they relate to Scrum."@en .
 
@@ -87,7 +89,7 @@ scvoc:ScrumTeam a rdfs:Class ;
     rdfs:label "Scrum Team"@en ;
     rdfs:comment "The fundamental unit of Scrum, consisting of a Product Owner, Scrum Master, and Developers, who collaboratively deliver valuable increments."@en ;
     rdfs:isDefinedBy coglo:ScrumTeamConcept ;
-    rdfs:subClassOf upper:Organization ;
+    rdfs:subClassOf upont:Organization ;
     skos:exactMatch coglo:ScrumTeamConcept ;
     skos:scopeNote "Use this concept to refer to the collective unit in Scrum responsible for delivering product increments. It includes all three roles: Product Owner, Scrum Master, and Developers. This term should not be used to refer to only one role or individuals outside the Scrum framework."@en .
 
