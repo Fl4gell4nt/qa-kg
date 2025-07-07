@@ -3,6 +3,7 @@
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix mer: <https://w3id.org/schweidler/semantics/qa-kg/meronymy-vocabulary#> .
+@prefix dc: <http://purl.org/dc/terms/> .
 
 <https://w3id.org/schweidler/semantics/qa-kg/meronymy-vocabulary> a owl:Ontology ;
     dc:title "Meronymy Ontology for Schweidler Semantic PKMS" ;

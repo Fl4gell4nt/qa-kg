@@ -12,6 +12,7 @@
 @prefix mevoc: <https://w3id.org/schweidler/semantics/qa-kg/meronymy-vocabulary#> .
 @prefix upper: <https://w3id.org/schweidler/semantics/qa-kg/upper#> .
 @prefix qavoc: <https://w3id.org/schweidler/semantics/qa-kg/qa-vocabulary#> .
+@prefix qa: <https://w3id.org/schweidler/semantics/qa-kg#> .
 
 #################################################################
 # Documentation

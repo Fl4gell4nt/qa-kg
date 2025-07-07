@@ -16,6 +16,7 @@
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix porg: <https://w3id.org/schweidler/semantics/qa-kg/org-people#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix qa: <https://w3id.org/schweidler/semantics/qa-kg#> .
 
 #################################################################
 # Documentation
