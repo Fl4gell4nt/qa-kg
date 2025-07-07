@@ -10,7 +10,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://w3id.org/schweidler/semantics/qa-kg/meronymy-vocabulary> a owl:Ontology ;
+<https://w3id.org/schweidler/semantics/qa-kg/meronymy-vocabulary/> a owl:Ontology ;
     dct:title "Meronymy Ontology for Schweidler Semantic PKMS" ;
     dct:creator "Rene Schweidler MSc." ;
     dct:description "Provides typed part-whole relations aligned with DUL for modeling component, member, substance, portion, place, and phase relationships." ;

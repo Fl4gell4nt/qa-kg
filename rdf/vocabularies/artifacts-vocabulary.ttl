@@ -21,7 +21,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix artvoc: <https://w3id.org/schweidler/semantics/qa-kg/artifacts-vocabulary#> .
 
-<https://w3id.org/schweidler/semantics/qa-kg/artifacts-vocabulary>
+<https://w3id.org/schweidler/semantics/qa-kg/artifacts-vocabulary/>
     a owl:Ontology ;
     dct:title "Knowledge Artifact Ontology" ;
     dct:creator "René Schweidler MSc." ;

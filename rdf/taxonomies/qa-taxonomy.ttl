@@ -22,7 +22,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 
-<https://w3id.org/schweidler/semantics/qa-kg/qa-taxonomy>
+<https://w3id.org/schweidler/semantics/qa-kg/qa-taxonomy/>
     a owl:Ontology ;
     dct:title "Software QA Domain Taxonomy" ;
     dct:creator "René Schweidler MSc." ;

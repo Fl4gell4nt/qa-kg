@@ -12,7 +12,7 @@
 #################################################################
 # Documentation
 #################################################################
-<https://w3id.org/schweidler/semantics/qa-kg/'ONTOLOGY-IRI'>
+<https://w3id.org/schweidler/semantics/qa-kg/'ONTOLOGY-IRI'/>
     a owl:Ontology ;
     dct:title "" ;
     rdfs:label "" ;

@@ -13,7 +13,7 @@
 #################################################################
 # Documentation
 #################################################################
-<https://w3id.org/schweidler/semantics/qa-kg/org-people-vocabulary>
+<https://w3id.org/schweidler/semantics/qa-kg/org-people-vocabulary/>
     a owl:Ontology ;
     dct:title "People & Organizational Structure Ontology"@en ;
     rdfs:label "People & Organizational Structure Ontology Module for RSPKMS"@en ;

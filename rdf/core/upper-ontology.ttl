@@ -13,7 +13,7 @@
 #################################################################
 # Documentation
 #################################################################
-<https://w3id.org/schweidler/semantics/qa-kg/upper-ontology>
+<https://w3id.org/schweidler/semantics/qa-kg/upper-ontology/>
     a owl:Ontology ;
     dct:title "Schweidler Semantic PKMS Upper Ontology" ;
     rdfs:label "Upper Ontology Module for RSPKMS"@en ;

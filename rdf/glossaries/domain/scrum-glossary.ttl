@@ -12,7 +12,7 @@
 #################################################################
 # Documentation
 #################################################################
-<https://w3id.org/schweidler/semantics/qa-kg/glossaries/domain/scrum-glossary>
+<https://w3id.org/schweidler/semantics/qa-kg/glossaries/scrum-glossary/>
     a owl:Ontology ;
     dct:title "Scrum Glossary"@en ;
     dct:description "A SKOS-based glossary of key terms used in the Scrum software development framework. The vocabulary includes roles, events, artifacts, and principles."@en ;
@@ -25,7 +25,7 @@
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     vann:preferredNamespacePrefix "scglo" ;
     vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/scrum-glossary#" ;
-    owl:versionIRI <https://w3id.org/schweidler/semantics/qa-kg/glossaries/domain/scrum-glossary/1.0.0#> ;
+    owl:versionIRI <https://w3id.org/schweidler/semantics/qa-kg/glossaries/scrum-glossary/1.0.0/> ;
     owl:versionInfo "0.1.0" ;
     owl:imports <http://purl.org/dc/terms/> ,
                 <http://www.w3.org/2002/07/owl#> ,
