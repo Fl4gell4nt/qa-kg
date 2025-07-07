@@ -8,9 +8,9 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix gloss: <https://w3id.org/schweidler/semantics/qa-kg/glossary#> .
-@prefix mer: <https://w3id.org/schweidler/semantics/qa-kg/meronymy#> .
+@prefix mevoc: <https://w3id.org/schweidler/semantics/qa-kg/meronymy-vocabulary#> .
 @prefix upper: <https://w3id.org/schweidler/semantics/qa-kg/upper#> .
-@prefix qa: <https://w3id.org/schweidler/semantics/qa-kg#> .
+@prefix qavoc: <https://w3id.org/schweidler/semantics/qa-kg/qa-vocabulary#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix org: <http://www.w3.org/ns/org#> .
@@ -22,7 +22,7 @@
 #################################################################
 <https://w3id.org/schweidler/semantics/qa-kg/org-people>
     a owl:Ontology ;
-    dc:title "People & Organizational Structure Ontology"@en ;
+    dct:title "People & Organizational Structure Ontology"@en ;
     rdfs:label "People & Organizational Structure Ontology Module for RSPKMS"@en ;
     rdfs:comment ""@en ;
     dct:description "Ontology describing people, roles, departments, reporting lines and responsibilities." ;

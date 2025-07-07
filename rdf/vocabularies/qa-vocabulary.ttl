@@ -31,7 +31,7 @@
     vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/qa-vocabulary#" ;
     owl:versionIRI <https://w3id.org/schweidler/semantics/qa-kg/qa-vocabulary/0.1.0/> ;
     owl:versionInfo "0.1.0" ;
-    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, coglo:, mer:, upper:, qa:, vann: .
+    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, coglo:, mevoc:, upper:, qa:, vann: .
 
 #################################################################
 # Core Classes

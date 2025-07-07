@@ -232,14 +232,14 @@ scvoc:owns a owl:ObjectProperty ;
 scvoc:fulfills a owl:ObjectProperty ;
     rdfs:label "fulfills"@en ;
     rdfs:comment "Indicates that a requirement is satisfied or implemented by a software function."@en ;
-    rdfs:domain scvoc:SoftwareFunction ;
-    rdfs:range scvoc:Requirement .
+    rdfs:domain qavoc:SoftwareFunction ;
+    rdfs:range qavoc:Requirement .
 
 scvoc:tests a owl:ObjectProperty ;
     rdfs:label "tests"@en ;
     rdfs:comment "Indicates that a person or role tests a specific software function."@en ;
-    rdfs:domain :Tester ;
-    rdfs:range :SoftwareFunction .
+    rdfs:domain svoc:Tester ;
+    rdfs:range qavoc:SoftwareFunction .
 
 :updates a owl:ObjectProperty ;
     rdfs:label "updates"@en ;
