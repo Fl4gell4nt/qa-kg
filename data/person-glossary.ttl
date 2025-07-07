@@ -1,26 +1,12 @@
-@prefix coglo: <https://w3id.org/schweidler/semantics/qa-kg/core-glossary#> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix mevoc: <https://w3id.org/schweidler/semantics/qa-kg/meronymy-vocabulary#> .
-@prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix porg: <https://w3id.org/schweidler/semantics/qa-kg/org-people#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix peglo: <https://w3id.org/schweidler/semantics/qa-kg/data/person-glossary#> .
 @prefix qa: <https://w3id.org/schweidler/semantics/qa-kg#> .
-@prefix qatax: <https://w3id.org/schweidler/semantics/qa-kg/qa-taxonomy#> .
-@prefix qavoc: <https://w3id.org/schweidler/semantics/qa-kg/qa-vocabulary#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rsont: <https://w3id.org/schweidler/semantics/qa-kg/data/rene-schweidler#> .
-@prefix scvoc: <https://w3id.org/schweidler/semantics/qa-kg/scrum-vocabulary#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix upper: <https://w3id.org/schweidler/semantics/qa-kg/upper#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
 
 #################################################################
 # Documentation
@@ -39,7 +25,15 @@
     vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/data/person-glossary#" ;
     owl:versionIRI <https://schweidler.github.io/pkms/glossaries/person/2025-07-02/person-glossary> ;
     owl:versionInfo "v2025-07-02" ;
-    owl:imports owl:, skos:, dct:, vann:, rdfs:, rsont:, peglo:, xsd: .
+    owl:imports <http://purl.org/dc/terms/> ,
+                <http://www.w3.org/2002/07/owl#> ,
+                <https://w3id.org/schweidler/semantics/qa-kg/data/person-glossary#> ,
+                <https://w3id.org/schweidler/semantics/qa-kg#> ,
+                <http://www.w3.org/2000/01/rdf-schema#> ,
+                <https://w3id.org/schweidler/semantics/qa-kg/data/rene-schweidler#> ,
+                <http://www.w3.org/2004/02/skos/core#> ,
+                <http://purl.org/vocab/vann/> ,
+                <http://www.w3.org/2001/XMLSchema#> .
 
 #################################################################
 # Concept Scheme

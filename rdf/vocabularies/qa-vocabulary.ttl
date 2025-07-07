@@ -51,7 +51,7 @@ qavoc:SoftwareFunction a owl:Class ;
     skos:scopeNote "Use this concept to represent an individual, identifiable piece of software behavior or functionality, typically aligned with a requirement or user need. It is not intended to represent entire systems, subsystems, or non-functional aspects like performance or scalability."@en ;
     skos:exactMatch coglo:SoftwareFunctionConcept ;
     rdfs:isDefinedBy coglo:SoftwareFunctionConcept ;
-    rdfs:subClassOf upper:Artifact .
+    rdfs:subClassOf upont:Artifact .
 
 qavoc:Requirement a owl:Class ;
     rdfs:label "Requirement"@en ;

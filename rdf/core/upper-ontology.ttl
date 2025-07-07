@@ -13,20 +13,11 @@
 #################################################################
 # Documentation
 #################################################################
-<https://w3id.org/schweidler/semantics/qa-kg/upper>
-    a owl:Ontology ;
-    
-   
-    vann:preferredNamespacePrefix "upont" ;
-    vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/upper#" ;
-    owl:versionInfo "0.1" ;
-    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, gloss:, foaf:, org:, mevoc:, upper:, qa:, vann: .
-
 <https://w3id.org/schweidler/semantics/qa-kg/upper-ontology>
     a owl:Ontology ;
     dct:title "Schweidler Semantic PKMS Upper Ontology" ;
     rdfs:label "Upper Ontology Module for RSPKMS"@en ;
-    rdfs:comment ""@en ;
+    rdfs:comment "Upper Ontology Module for RSPKMS"@en ;
     dct:description "Upper ontology defining foundational classes and properties for software QA, knowledge artifacts, events, people, and roles."@en ;
     dct:language "en" ;
     dct:creator rsont:ReneSchweidler ;
@@ -53,42 +44,42 @@
 #################################################################
 # Core Classes
 #################################################################
-upper:Agent
+upont:Agent
     a owl:Class ;
     rdfs:label "Agent"@en ;
     rdfs:comment "An entity capable of intentional action (person, organization, software agent)."@en .
 
-upper:Person
+upont:Person
     a owl:Class ;
-    rdfs:subClassOf upper:Agent ;
+    rdfs:subClassOf upont:Agent ;
     rdfs:subClassOf foaf:Person ;
     rdfs:label "Person"@en ;
     rdfs:comment "A human being."@en .
 
-upper:Organization
+upont:Organization
     a owl:Class ;
-    rdfs:subClassOf upper:Agent ;
+    rdfs:subClassOf upont:Agent ;
     rdfs:subClassOf org:Organization ;
     rdfs:label "Organization"@en ;
     rdfs:comment "An organized group of people, such as a company or department."@en .
 
-upper:Role
+upont:Role
     a owl:Class ;
     rdfs:label "Role"@en ;
     rdfs:comment "A function or responsibility assigned to an agent."@en .
 
-upper:Activity
+upont:Activity
     a owl:Class ;
     rdfs:label "Activity"@en ;
     rdfs:comment "A process or action performed by agents."@en .
 
-upper:Event
+upont:Event
     a owl:Class ;
-    rdfs:subClassOf upper:Activity ;
+    rdfs:subClassOf upont:Activity ;
     rdfs:label "Event"@en ;
     rdfs:comment "An occurrence or happening at a point or interval in time."@en .
 
-upper:Artifact
+upont:Artifact
     a owl:Class ;
     rdfs:label "Artifact"@en ;
     rdfs:comment "A physical or digital object created, used, or modified during activities."@en .
@@ -97,35 +88,35 @@ upper:Artifact
 # Core Properties
 #################################################################
 
-upper:hasRole
+upont:hasRole
     a owl:ObjectProperty ;
     rdfs:label "has role"@en ;
-    rdfs:domain upper:Agent ;
-    rdfs:range upper:Role ;
+    rdfs:domain upont:Agent ;
+    rdfs:range upont:Role ;
     rdfs:comment "Associates an agent with a role they fulfill."@en .
 
-upper:participatesIn
+upont:participatesIn
     a owl:ObjectProperty ;
     rdfs:label "participates in"@en ;
-    rdfs:domain upper:Agent ;
-    rdfs:range upper:Activity ;
+    rdfs:domain upont:Agent ;
+    rdfs:range upont:Activity ;
     rdfs:comment "Indicates participation of an agent in an activity."@en .
 
-upper:produces
+upont:produces
     a owl:ObjectProperty ;
     rdfs:label "produces"@en ;
-    rdfs:domain upper:Activity ;
-    rdfs:range upper:Artifact ;
+    rdfs:domain upont:Activity ;
+    rdfs:range upont:Artifact ;
     rdfs:comment "Indicates that an activity results in the creation or modification of an artifact."@en .
 
-upper:hasParticipant
+upont:hasParticipant
     a owl:ObjectProperty ;
     rdfs:label "has participant"@en ;
-    rdfs:domain upper:Activity ;
-    rdfs:range upper:Agent ;
+    rdfs:domain upont:Activity ;
+    rdfs:range upont:Agent ;
     rdfs:comment "Indicates agents involved in an activity."@en .
 
-upper:relatedTo
+upont:relatedTo
     a owl:ObjectProperty ;
     rdfs:label "related to"@en ;
     rdfs:comment "General-purpose relation to link concepts or entities."@en .
@@ -134,17 +125,17 @@ upper:relatedTo
 # Data Properties
 #################################################################
 
-upper:startTime
+upont:startTime
     a owl:DatatypeProperty ;
     rdfs:label "start time"@en ;
     rdfs:comment "Timestamp indicating when an event starts."@en ;
-    rdfs:domain upper:Event ;
+    rdfs:domain upont:Event ;
     rdfs:range xsd:dateTime .
 
-upper:endTime
+upont:endTime
     a owl:DatatypeProperty ;
     rdfs:label "end time"@en ;
     rdfs:comment "Timestamp indicating when an event ends."@en ;
-    rdfs:domain upper:Event ;
+    rdfs:domain upont:Event ;
     rdfs:range xsd:dateTime .
     

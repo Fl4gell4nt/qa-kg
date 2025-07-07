@@ -45,7 +45,7 @@
 #################################################################
 
 porg:Person a owl:Class ;
-    rdfs:subClassOf upper:Person ;
+    rdfs:subClassOf upont:Person ;
     rdfs:label "Person" ;
     rdfs:comment "A person in a personal or professional context." ;
     porg:firstName rdfs:Literal ;
@@ -56,7 +56,7 @@ porg:Interaction a owl:Class ;
     rdfs:comment "An interaction or communication between one or more people." .
 
 porg:Organization a owl:Class ;
-    rdfs:subClassOf upper:Organization ;
+    rdfs:subClassOf upont:Organization ;
     rdfs:label "Organization" .
 
 porg:Affiliation a owl:Class ;
@@ -72,7 +72,7 @@ porg:CommunicationChannel a owl:Class ;
     rdfs:comment "Medium of communication (e.g. email, phone, Slack)." .
 
 porg:Event a owl:Class ;
-    rdfs:subClassOf upper:Event ;
+    rdfs:subClassOf upont:Event ;
     rdfs:label "Event" ;
     rdfs:comment "A time-bounded occurrence involving one or more people." .
 
@@ -81,7 +81,7 @@ porg:Note a owl:Class ;
     rdfs:comment "A note taken about a person or interaction." .
 
 porg:Document a owl:Class ;
-    rdfs:subClassOf upper:Artifact ;
+    rdfs:subClassOf upont:Artifact ;
     rdfs:label "Document" ;
     rdfs:comment "A shared document or file associated with an interaction." .
 
