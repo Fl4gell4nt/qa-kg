@@ -241,7 +241,7 @@ scvoc:tests a owl:ObjectProperty ;
     rdfs:domain svoc:Tester ;
     rdfs:range qavoc:SoftwareFunction .
 
-:updates a owl:ObjectProperty ;
+scvoc:updates a owl:ObjectProperty ;
     rdfs:label "updates"@en ;
     rdfs:comment "Indicates that a Scrum event leads to changes or refinements in a backlog."@en ;
     rdfs:domain scvoc:ScrumEvent ;
