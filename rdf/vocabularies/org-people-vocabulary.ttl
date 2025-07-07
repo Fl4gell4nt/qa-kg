@@ -30,7 +30,7 @@
     owl:versionInfo "0.1.0" ;
     owl:imports <http://purl.org/dc/terms/> ,
                 <http://www.w3.org/2002/07/owl#> ,
-                <https://w3id.org/schweidler/semantics/qa-kg/org-people#> ,
+                <https://w3id.org/schweidler/semantics/qa-kg/org-people-vocabulary#> ,
                 <http://www.w3.org/ns/prov#> ,
                 <https://w3id.org/schweidler/semantics/qa-kg#> ,
                 <http://www.w3.org/2000/01/rdf-schema#> ,
