@@ -13,6 +13,7 @@
 @prefix qa: <https://w3id.org/schweidler/semantics/qa-kg#> .
 @prefix scvoc: <https://w3id.org/schweidler/semantics/qa-kg/scrum-vocabulary#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix qavoc: <https://w3id.org/schweidler/semantics/qa-kg/qa-vocabulary#> .
 
 #################################################################
 # Documentation
@@ -238,7 +239,7 @@ scvoc:fulfills a owl:ObjectProperty ;
 scvoc:tests a owl:ObjectProperty ;
     rdfs:label "tests"@en ;
     rdfs:comment "Indicates that a person or role tests a specific software function."@en ;
-    rdfs:domain svoc:Tester ;
+    rdfs:domain scvoc:Tester ;
     rdfs:range qavoc:SoftwareFunction .
 
 scvoc:updates a owl:ObjectProperty ;

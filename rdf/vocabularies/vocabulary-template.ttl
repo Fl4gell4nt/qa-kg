@@ -11,7 +11,8 @@
 @prefix mer: <https://w3id.org/schweidler/semantics/qa-kg/meronymy#> .
 @prefix upper: <https://w3id.org/schweidler/semantics/qa-kg/upper#> .
 @prefix qa: <https://w3id.org/schweidler/semantics/qa-kg#> .
-@prefix : <https://w3id.org/schweidler/semantics/qa-kg/'LOCAL-NS-IRI'#> .
+@prefix ex: <https://w3id.org/schweidler/semantics/qa-kg/'LOCAL-NS-IRI'#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 
 #################################################################
 # Documentation
@@ -29,9 +30,9 @@
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     vann:preferredNamespacePrefix "" ;
     vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/'NAMESPACE-IRI'#" ;
-    owl:versionIRI <https://w3id.org/schweidler/semantics/qa-kg/'NAME'-glossary/0.1.0/> ;
+    owl:versionIRI <https://w3id.org/schweidler/semantics/qa-kg/'NAME'-vocabulary/0.1.0/> ;
     owl:versionInfo "0.1.0" ;
-    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, gloss:, mer:, upper:, qa: .
+    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, owl:, time:, prov:, gloss:, mer:, upper:, qa:, vann: .
 
 
 #################################################################

@@ -14,6 +14,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix qa: <https://w3id.org/schweidler/semantics/qa-kg#> .
 
 #################################################################
 # Documentation
