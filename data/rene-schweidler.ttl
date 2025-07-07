@@ -49,7 +49,7 @@ rsont:ReneSchweidler
     porg:firstName "René" ;
     porg:middleName "Erwin" ;
     porg:lastName "Schweidler" ;
-    vcard:hasEmail "rene.schweidler@gmail.com" ;
+    vcard:hasEmail <mailto:rene.schweidler@gmail.com> ;
     schema:knowsAbout   "Mechatronics/Robotics", 
                         "Software Development", 
                         "Software Testing", 

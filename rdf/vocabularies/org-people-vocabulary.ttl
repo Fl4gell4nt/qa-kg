@@ -35,7 +35,7 @@
     vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/org-people-vocabulary#" ;
     owl:versionIRI <https://w3id.org/schweidler/semantics/qa-kg/org-people-vocabulary/0.1.0/> ;
     owl:versionInfo "0.1.0" ;
-    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, time:, prov:, gloss:, mer:, upper:, qa:, foaf:, vcard:, org:, vann: .
+    owl:imports owl:, dct:, rdf:, rdfs:, skos:, rsont:, xsd:, time:, prov:, gloss:, mevoc:, upper:, qa:, foaf:, vcard:, org:, vann: .
 
 #################################################################
 # Classes

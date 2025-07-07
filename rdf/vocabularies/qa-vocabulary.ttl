@@ -58,7 +58,7 @@ qavoc:Constraint a owl:Class ;
     skos:scopeNote "Use this concept to classify requirements that limit how a system must be built or operated. Examples include regulatory requirements, technology constraints, interoperability obligations, or resource limitations."@en ;
     skos:exactMatch coglo:ConstraintConcept ;
     rdfs:isDefinedBy coglo:ConstraintConcept ;
-    rdfs:subClassOf :Requirement .
+    rdfs:subClassOf qavoc:Requirement .
 
 #################################################################
 # ObjectProperties

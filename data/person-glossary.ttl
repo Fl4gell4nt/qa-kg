@@ -1,10 +1,11 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix dc:  <http://purl.org/dc/terms/> .
+@prefix dct:  <http://purl.org/dc/terms/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix qa: <https://w3id.org/schweidler/semantics/qa#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rsont: <https://w3id.org/schweidler/semantics/qa-kg/data/rene-schweidler#> .
 @prefix peglo: <https://w3id.org/schweidler/semantics/qa-kg/data/person-glossary#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 #################################################################
 # Documentation
@@ -23,7 +24,7 @@
     vann:preferredNamespaceUri "https://w3id.org/schweidler/semantics/qa-kg/data/person-glossary#" ;
     owl:versionIRI <https://schweidler.github.io/pkms/glossaries/person/2025-07-02/person-glossary> ;
     owl:versionInfo "v2025-07-02" ;
-    owl:imports <http://www.w3.org/2004/02/skos/core> .
+    owl:imports owl:, skos:, dct:, vann:, rdfs:, rsont:, peglo:, xsd: .
 
 #################################################################
 # Concept Scheme
