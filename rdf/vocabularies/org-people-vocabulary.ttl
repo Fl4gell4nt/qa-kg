@@ -1,6 +1,6 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix porg: <https://w3id.org/schweidler/semantics/qa-kg/org-people#> .
+@prefix porg: <https://w3id.org/schweidler/semantics/qa-kg/org-people-vocabulary#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix qa: <https://w3id.org/schweidler/semantics/qa-kg#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -13,7 +13,7 @@
 #################################################################
 # Documentation
 #################################################################
-<https://w3id.org/schweidler/semantics/qa-kg/org-people>
+<https://w3id.org/schweidler/semantics/qa-kg/org-people-vocabulary>
     a owl:Ontology ;
     dct:title "People & Organizational Structure Ontology"@en ;
     rdfs:label "People & Organizational Structure Ontology Module for RSPKMS"@en ;

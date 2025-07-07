@@ -20,12 +20,12 @@
     #################################################################
 
     owl:imports
-        <https://w3id.org/schweidler/semantics/qa-kg/rdf/upper> ,          # Upper ontology for high-level concepts
-        <https://w3id.org/schweidler/semantics/qa-kg/rdf/core-glossary> ,       # SKOS terms and domain definitions
-        <https://w3id.org/schweidler/semantics/qa-kg/rdf/scrum-glossary> ,       # SKOS terms and domain definitions
-        <https://w3id.org/schweidler/semantics/qa-kg/rdf/test-glossary> ,       # SKOS terms and domain definitions
-        <https://w3id.org/schweidler/semantics/qa-kg/rdf/meronymy> ,       # Meronymy ontology for detailed part/whole relations
-        <https://w3id.org/schweidler/semantics/qa-kg/rdf/4_qa-taxonomy> ,    # OWL taxonomy for test levels/types
-        <https://w3id.org/schweidler/semantics/qa-kg/rdf/5_scrum> ,          # Events, roles, artifacts in Scrum
-        <https://w3id.org/schweidler/semantics/qa-kg/rdf/6_org-people> ,     # People, roles, and org structure
-        <https://w3id.org/schweidler/semantics/qa-kg/rdf/7_artifacts> .      # Knowledge artifacts (plans, reports, etc.)
+        <https://w3id.org/schweidler/semantics/qa-kg/upper-ontology> ,    
+        <https://w3id.org/schweidler/semantics/qa-kg/core-glossary> ,
+        <https://w3id.org/schweidler/semantics/qa-kg/scrum-glossary> ,
+        <https://w3id.org/schweidler/semantics/qa-kg/test-glossary> ,
+        <https://w3id.org/schweidler/semantics/qa-kg/meronymy-vocabulary> ,
+        <https://w3id.org/schweidler/semantics/qa-kg/qa-taxonomy> ,
+        <https://w3id.org/schweidler/semantics/qa-kg/scrum-vocabulary> ,
+        <https://w3id.org/schweidler/semantics/qa-kg/org-people-vocabulary> ,
+        <https://w3id.org/schweidler/semantics/qa-kg/artifacts-vocabulary> .
