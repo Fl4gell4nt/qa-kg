@@ -2,22 +2,22 @@ RewriteEngine On
 RewriteBase /schweidler/semantics/qa-kg/
 
 # Redirect ontology and vocabulary IRIs to the corresponding Turtle files
-RewriteRule ^upper-ontology/?$ https://schweidler.github.io/qa-kg/ontologies/upper/0.1.0/upper.ttl [R=302,L]
-RewriteRule ^core-glossary/?$ https://schweidler.github.io/qa-kg/glossaries/cross-domain/core-concepts/0.1.0/core-concepts.ttl [R=302,L]
-RewriteRule ^scrum-glossary/?$ https://schweidler.github.io/qa-kg/glossaries/domain/scrum/0.1.0/scrum.ttl [R=302,L]
-RewriteRule ^test-glossary/?$ https://schweidler.github.io/qa-kg/glossaries/domain/software-testing/0.1.0/software-testing.ttl [R=302,L]
-RewriteRule ^meronymy-vocabulary/?$ https://schweidler.github.io/qa-kg/vocabularies/meronymy/0.1.0/meronymy-vocabulary.ttl [R=302,L]
-RewriteRule ^qa-taxonomy/?$ https://schweidler.github.io/qa-kg/taxonomies/qa/0.1.0/qa-taxonomy.ttl [R=302,L]
-RewriteRule ^scrum-vocabulary/?$ https://schweidler.github.io/qa-kg/vocabularies/scrum/0.1.0/scrum-vocabulary.ttl [R=302,L]
-RewriteRule ^org-people-vocabulary/?$ https://schweidler.github.io/qa-kg/vocabularies/org-people/0.1.0/org-people-vocabulary.ttl [R=302,L]
-RewriteRule ^qa-vocabulary/?$ https://schweidler.github.io/qa-kg/vocabularies/qa/0.1.0/qa-vocabulary.ttl [R=302,L]
-RewriteRule ^artifacts-vocabulary/?$ https://schweidler.github.io/qa-kg/vocabularies/artifacts/0.1.0/artifacts-vocabulary.ttl [R=302,L]
-RewriteRule ^manifest/?$ https://schweidler.github.io/qa-kg/manifest.ttl [R=302,L]
-RewriteRule ^data/rene-schweidler/?$ https://schweidler.github.io/qa-kg/data/rene-schweidler.ttl [R=302,L]
-RewriteRule ^data/person-glossary/?$ https://schweidler.github.io/qa-kg/data/person-glossary.ttl [R=302,L]
+RewriteRule ^upper-ontology/?$ https://raw.githubusercontent.com/Fl4gell4nt/qa-kg/main/ontologies/upper/0.1.0/upper.ttl [R=302,L]
+RewriteRule ^core-glossary/?$ https://raw.githubusercontent.com/Fl4gell4nt/qa-kg/main/glossaries/cross-domain/core-concepts/0.1.0/core-concepts.ttl [R=302,L]
+RewriteRule ^scrum-glossary/?$ https://raw.githubusercontent.com/Fl4gell4nt/qa-kg/main/glossaries/domain/scrum/0.1.0/scrum.ttl [R=302,L]
+RewriteRule ^test-glossary/?$ https://raw.githubusercontent.com/Fl4gell4nt/qa-kg/main/glossaries/domain/software-testing/0.1.0/software-testing.ttl [R=302,L]
+RewriteRule ^meronymy-vocabulary/?$ https://raw.githubusercontent.com/Fl4gell4nt/qa-kg/main/vocabularies/meronymy/0.1.0/meronymy-vocabulary.ttl [R=302,L]
+RewriteRule ^qa-taxonomy/?$ https://raw.githubusercontent.com/Fl4gell4nt/qa-kg/main/taxonomies/qa/0.1.0/qa-taxonomy.ttl [R=302,L]
+RewriteRule ^scrum-vocabulary/?$ https://raw.githubusercontent.com/Fl4gell4nt/qa-kg/main/vocabularies/scrum/0.1.0/scrum-vocabulary.ttl [R=302,L]
+RewriteRule ^org-people-vocabulary/?$ https://raw.githubusercontent.com/Fl4gell4nt/qa-kg/main/vocabularies/org-people/0.1.0/org-people-vocabulary.ttl [R=302,L]
+RewriteRule ^qa-vocabulary/?$ https://raw.githubusercontent.com/Fl4gell4nt/qa-kg/main/vocabularies/qa/0.1.0/qa-vocabulary.ttl [R=302,L]
+RewriteRule ^artifacts-vocabulary/?$ https://raw.githubusercontent.com/Fl4gell4nt/qa-kg/main/vocabularies/artifacts/0.1.0/artifacts-vocabulary.ttl [R=302,L]
+RewriteRule ^manifest/?$ https://raw.githubusercontent.com/Fl4gell4nt/qa-kg/main/manifest.ttl [R=302,L]
+RewriteRule ^data/rene-schweidler/?$ https://raw.githubusercontent.com/Fl4gell4nt/qa-kg/main/data/rene-schweidler.ttl [R=302,L]
+RewriteRule ^data/person-glossary/?$ https://raw.githubusercontent.com/Fl4gell4nt/qa-kg/main/data/person-glossary.ttl [R=302,L]
 
 # Serve other .ttl files by mirroring the repository path
-RewriteRule ^(.+\.ttl)$ https://schweidler.github.io/qa-kg/$1 [R=302,L]
+RewriteRule ^(.+\.ttl)$ https://raw.githubusercontent.com/Fl4gell4nt/qa-kg/main/$1 [R=302,L]
 
 # Default to the GitHub Pages site for all other requests
-Redirect 302 / https://schweidler.github.io/qa-kg/
+Redirect 302 / https://raw.githubusercontent.com/Fl4gell4nt/qa-kg/main
